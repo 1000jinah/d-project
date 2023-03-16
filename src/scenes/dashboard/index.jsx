@@ -9,7 +9,7 @@ function Dashboard() {
   const theme = useTheme();
   return (
     <Box sx="width:100%" theme={theme}>
-      <Box m="1.5rem 2rem 2rem 3rem">
+      <Box m="1.5rem 2rem">
         <Header />
         <ComposedTextField />
         <DefaultButton />

@@ -15,7 +15,7 @@ const SocialLoginButtons = () => {
   return (
     <Stack
       direction="row"
-      sx={{ justifyContent: "center", m: "1.5rem 2rem 2rem 3rem" }}
+      sx={{ justifyContent: "center", m: "1.5rem 2rem" }}
     >
       <Button
         variant="outlined"
@@ -23,6 +23,7 @@ const SocialLoginButtons = () => {
         sx={{
           fontWeight: "bold",
           background: "tranparent",
+          textTransform: "inherit",
           color:
             theme === "dark"
               ? theme.palette.primary[200]
@@ -42,6 +43,7 @@ const SocialLoginButtons = () => {
         sx={{
           fontWeight: "bold",
           background: "tranparent",
+          textTransform: "inherit",
           color:
             theme === "dark"
               ? theme.palette.primary[200]
@@ -62,6 +64,7 @@ const SocialLoginButtons = () => {
         sx={{
           fontWeight: "bold",
           background: "tranparent",
+          textTransform: "inherit",
           color:
             theme === "dark"
               ? theme.palette.primary[200]

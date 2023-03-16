@@ -18,7 +18,7 @@ const OAuth = () => {
       <Box m="1.5rem 2rem 2rem 3rem">
         <Typography>
           Already have an account?
-          <span style={{ color: "#fd3f01" }}>Log in</span>
+          <span style={{ color: "#fd3f01" }}> Log in</span>
         </Typography>
       </Box>
       <Box>

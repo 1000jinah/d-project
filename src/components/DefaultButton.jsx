@@ -10,7 +10,7 @@ export default function DefaultButton() {
         sx={{
           backgroundColor: "#000000",
           color: "#fff",
-          textTransform: "capitalize",
+          textTransform: "inherit",
           fontWeight: "bold",
           fontSize: 16,
           p:"0.45rem", 
