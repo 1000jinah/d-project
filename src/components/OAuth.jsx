@@ -22,7 +22,6 @@ const OAuth = () => {
         </Typography>
       </Box>
       <Box>
-        {" "}
         <Typography
           variant="span"
           className="hrSection"
