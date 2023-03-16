@@ -13,7 +13,7 @@ function MarginBar() {
 const SocialLoginButtons = () => {
   const theme = useTheme();
   return (
-    <Stack direction="row" sx={{justifyContent: "center" }}>
+    <Stack direction="row" sx={{justifyContent: "center" }} m="1.5rem 2rem 2rem 3rem">
       <Button
       variant="outlined"
       startIcon={<Apple />}

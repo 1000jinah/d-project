@@ -34,7 +34,7 @@ const OAuth = () => {
           Or via social media
         </Typography>
       </Box>
-      <SocialLoginButtons m="1.5rem 2rem 2rem 3rem"/>
+      <SocialLoginButtons />
     </Box>
   );
 };
