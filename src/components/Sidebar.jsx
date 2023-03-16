@@ -110,9 +110,9 @@ const Sidebar = ({
 
   return (
     <Box component="nav">
-      {isSidebarOpen && (
+      {!isSidebarOpen && (
         <Drawer
-          open={isSidebarOpen}
+          open={!isSidebarOpen}
           onClose={() => setIsSidebarOpen(false)}
           variant="persistent"
           anchor="left"

@@ -5,7 +5,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        width: 20,
+        width: 8,
       }}
     />
   );
@@ -13,61 +13,67 @@ function MarginBar() {
 const SocialLoginButtons = () => {
   const theme = useTheme();
   return (
-    <Stack direction="row" sx={{justifyContent: "center" }} m="1.5rem 2rem 2rem 3rem">
+    <Stack
+      direction="row"
+      sx={{ justifyContent: "center", m: "1.5rem 2rem 2rem 3rem" }}
+    >
       <Button
-      variant="outlined"
-      startIcon={<Apple />}
-      sx={{
-        background: "tranparent",
-        color:
-          theme === "dark"
-            ? theme.palette.primary[200]
-            : theme.palette.secondary[0],
-        borderColor:
-          theme === "dark"
-            ? theme.palette.primary[450]
-            : theme.palette.secondary[600],
-      }}
-    >
-      Apple ID
-    </Button> 
-    <MarginBar/>
-    <Button
-      variant="outlined"
-      startIcon={<Google />}
-      sx={{
-        background: "tranparent",
-        color:
-          theme === "dark"
-            ? theme.palette.primary[200]
-            : theme.palette.secondary[0],
-        borderColor:
-          theme === "dark"
-            ? theme.palette.primary[450]
-            : theme.palette.secondary[600],
-      }}
-    >
-      Google
-    </Button> 
+        variant="outlined"
+        startIcon={<Apple />}
+        sx={{
+          fontWeight: "bold",
+          background: "tranparent",
+          color:
+            theme === "dark"
+              ? theme.palette.primary[200]
+              : theme.palette.secondary[0],
+          borderColor:
+            theme === "dark"
+              ? theme.palette.primary[450]
+              : theme.palette.secondary[600],
+        }}
+      >
+        Apple ID
+      </Button>
+      <MarginBar />
+      <Button
+        variant="outlined"
+        startIcon={<Google />}
+        sx={{
+          fontWeight: "bold",
+          background: "tranparent",
+          color:
+            theme === "dark"
+              ? theme.palette.primary[200]
+              : theme.palette.secondary[0],
+          borderColor:
+            theme === "dark"
+              ? theme.palette.primary[450]
+              : theme.palette.secondary[600],
+        }}
+      >
+        Google
+      </Button>
 
-    <MarginBar/>
-    <Button
-      variant="outlined"
-      startIcon={<FacebookRounded />}
-      sx={{
-        background: "tranparent",
-        color:
-          theme === "dark"
-            ? theme.palette.primary[200]
-            : theme.palette.secondary[0],
-        borderColor:
-          theme === "dark"
-            ? theme.palette.primary[450]
-            : theme.palette.secondary[600],
-      }}
-    >
-      Facebook
-    </Button> 
+      <MarginBar />
+      <Button
+        variant="outlined"
+        startIcon={<FacebookRounded />}
+        sx={{
+          fontWeight: "bold",
+          background: "tranparent",
+          color:
+            theme === "dark"
+              ? theme.palette.primary[200]
+              : theme.palette.secondary[0],
+          borderColor:
+            theme === "dark"
+              ? theme.palette.primary[450]
+              : theme.palette.secondary[600],
+        }}
+      >
+        Facebook
+      </Button>
     </Stack>
   );
 };
