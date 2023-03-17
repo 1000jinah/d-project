@@ -1,30 +1,33 @@
 import React from "react";
 
-import { Stack, Button } from "@mui/material";
-
-export default function DefaultButton() {
+import { Stack, Button, useTheme } from "@mui/material";
+import { Link } from "react-router-dom";
+export default function DefaultButton({ buttonName }) {
+  const theme = useTheme();
   return (
-    <Stack direction="column" spacing={2} mt="30px">
+    <Stack direction="column" spacing={2}>
       <Button
+        component={Link}
+        to="/introduce/first"
         variant="contained"
         sx={{
-          backgroundColor: "#000000",
-          color: "#fff",
+          borderRadius: 0,
+          backgroundColor:
+            theme === "dark"
+              ? theme.palette.secondary[1000]
+              : theme.palette.secondary[0],
+          color:
+            theme === "dark"
+              ? theme.palette.primary[0]
+              : theme.palette.primary[1000],
           textTransform: "inherit",
           fontWeight: "bold",
           fontSize: 16,
-          p:"0.45rem", 
-        // height: "22.5pt"
-             }}
+          p: "0.45rem",
+        }}
       >
-        Sign in
+        {buttonName}
       </Button>
-      {/* <Button variant="contained" disabled>
-        Disabled
-      </Button>
-      <Button variant="contained" href="#contained-buttons">
-        Link
-      </Button> */}
     </Stack>
   );
 }

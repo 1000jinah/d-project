@@ -1,19 +1,52 @@
-import React from "react";
-import { Box, useTheme } from "@mui/material";
-import Header from "components/Header";
-import ComposedTextField from "components/InputBase";
+import React, { useState } from "react";
+import { Box, useTheme, Typography } from "@mui/material";
 import DefaultButton from "components/DefaultButton";
 import OAuth from "components/OAuth";
+import EmailPassword from "components/EmailPassword";
+import ConfirmPassword from "components/ConfimPassword";
+import RememberPassword from "components/RememberPassword";
+import Header from "components/Header";
+
 
 function Dashboard() {
   const theme = useTheme();
+  const [showText, setShowText] = useState();
   return (
     <Box sx="width:100%" theme={theme}>
       <Box m="1.5rem 2rem">
-        <Header />
-        <ComposedTextField />
-        <DefaultButton />
+        <Header
+          title={showText ? "Hi!" : "Welcome!"}
+          subtitle={showText ? "Create a new account" : "Log in to continue"}
+        />
+        <EmailPassword />
+
+        {showText ? <ConfirmPassword /> : <RememberPassword />}
+
+          <DefaultButton buttonName={showText ? "Sign in" : "Log in"} />
       </Box>
+      <Box
+        sx={{
+          textAlign: "center",
+          display: "flex",
+          justifyContent: "space-around",
+          flexDirection: "column",
+          height: "50px",
+          color: theme.palette.secondary[500],
+        }}
+      >
+        <Box>
+          <Typography>
+            Already have an account?
+            <span
+              style={{ color: "#fd3f01" }}
+              onClick={() => setShowText(!showText)}
+            >
+              {showText ? " Log in" : " Sign in"}
+            </span>
+          </Typography>
+        </Box>
+      </Box>
+
       <OAuth />
     </Box>
   );

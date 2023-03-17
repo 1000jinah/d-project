@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Stack, useTheme } from "@mui/material";
-// import { Apple, Google, FacebookRounded } from "@mui/icons-material";
+// git
 import AppleIcon from "../assets/icon_apple.svg";
 import GoogleIcon from "../assets/icon_google.svg";
 import FacebookIcon from "../assets/icon_facebook.svg";
@@ -20,10 +20,13 @@ const SocialLoginButtons = () => {
     <Stack direction="row" sx={{ justifyContent: "center", m: "1.5rem 2rem" }}>
       <Button
         variant="outlined"
-        startIcon={ <img className="thumbnail" src={AppleIcon} alt="AppleIcon"></img>}
+        startIcon={
+          <img className="thumbnail" src={AppleIcon} alt="AppleIcon"></img>
+        }
         sx={{
           p: "4px 8px",
           fontWeight: "bold",
+          borderRadius: 0,
           background: "tranparent",
           textTransform: "inherit",
           color:
@@ -41,10 +44,13 @@ const SocialLoginButtons = () => {
       <MarginBar />
       <Button
         variant="outlined"
-        startIcon={ <img className="thumbnail" src={GoogleIcon} alt="GoogleIcon"></img>}
+        startIcon={
+          <img className="thumbnail" src={GoogleIcon} alt="GoogleIcon"></img>
+        }
         sx={{
           p: "4px 8px",
           fontWeight: "bold",
+          borderRadius: 0,
           background: "tranparent",
           textTransform: "inherit",
           color:
@@ -63,10 +69,17 @@ const SocialLoginButtons = () => {
       <MarginBar />
       <Button
         variant="outlined"
-        startIcon={ <img className="thumbnail" src={FacebookIcon} alt="FacebookIcon"></img>}
+        startIcon={
+          <img
+            className="thumbnail"
+            src={FacebookIcon}
+            alt="FacebookIcon"
+          ></img>
+        }
         sx={{
           p: "4px 8px",
           fontWeight: "bold",
+          borderRadius: 0,
           background: "tranparent",
           textTransform: "inherit",
           color:

@@ -20,6 +20,7 @@ export const tokensDark = {
 
   primary: {
     // Black
+    0: '#ffffff',
     100: "#d3d2d2",
     200: "#a6a5a5",
     300: "#7a7777",
@@ -73,33 +74,8 @@ export const themeSettings = (mode) => {
   return {
     palette: {
       mode: mode,
-      ...(mode === "dark"
+      ...(mode === "light"
         ? {
-            // palette values for dark mode
-            primary: {
-              ...tokensDark.primary,
-              main: tokensDark.secondary[1000],
-              light: tokensDark.secondary[900],
-            },
-            secondary: {
-              ...tokensDark.secondary,
-              main: tokensDark.secondary[0],
-              light: tokensDark.secondary[100],
-            },
-            neutral: {
-              ...tokensDark.secondary,
-              main: tokensDark.secondary[0],
-            },
-            background: {
-              default: tokensDark.secondary[900],
-              alt: tokensDark.secondary[200],
-            },
-            button: {
-              background: tokensDark.secondary[0],
-              text: tokensDark.secondary[600],
-            },
-          }
-        : {
             // palette values for light mode
             primary: {
               ...tokensLight.primary,
@@ -122,6 +98,33 @@ export const themeSettings = (mode) => {
             button: {
               background: tokensDark.secondary[300],
               text: tokensDark.secondary[0],
+            },
+          }
+        : {
+            // palette values for dark mode
+            
+
+            primary: {
+              ...tokensDark.primary,
+              main: tokensDark.secondary[1000],
+              light: tokensDark.secondary[900],
+            },
+            secondary: {
+              ...tokensDark.secondary,
+              main: tokensDark.secondary[0],
+              light: tokensDark.secondary[100],
+            },
+            neutral: {
+              ...tokensDark.secondary,
+              main: tokensDark.secondary[0],
+            },
+            background: {
+              default: tokensDark.secondary[900],
+              alt: tokensDark.secondary[200],
+            },
+            button: {
+              background: tokensDark.secondary[0],
+              text: tokensDark.secondary[600],
             },
           }),
     },
