@@ -594,7 +594,7 @@ function SurveyTwelfth() {
             background: "#fff",
           }}
         >
-          <Link to={"/projection/profile"} sx={{}}>
+          <Link to={"/projection/default"} sx={{}}>
             <DefaultButton
               buttonName={"Continue"}
               sx={{
