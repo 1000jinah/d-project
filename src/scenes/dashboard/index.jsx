@@ -6,14 +6,14 @@ import EmailPassword from "components/EmailPassword";
 import ConfirmPassword from "components/ConfimPassword";
 import RememberPassword from "components/RememberPassword";
 import Header from "components/Header";
-
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const theme = useTheme();
   const [showText, setShowText] = useState();
   return (
     <Box sx="width:100%" theme={theme}>
-      <Box m="1.5rem 2rem">
+      <Box p="1.2rem 1.6rem">
         <Header
           title={showText ? "Hi!" : "Welcome!"}
           subtitle={showText ? "Create a new account" : "Log in to continue"}
@@ -22,7 +22,9 @@ function Dashboard() {
 
         {showText ? <ConfirmPassword /> : <RememberPassword />}
 
+        <Link to="/introduce/first">
           <DefaultButton buttonName={showText ? "Sign in" : "Log in"} />
+        </Link>
       </Box>
       <Box
         sx={{

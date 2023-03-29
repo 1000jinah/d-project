@@ -18,7 +18,7 @@ function MarginBar() {
 function IntroduceSecond() {
   const theme = useTheme();
   return (
-    <Box sx={{ width: "100%", px: "1rem" }} theme={theme}>
+    <Box sx={{ width: "100%", pl: "1rem", pr: "2rem", py: "0.5rem" }} theme={theme}>
       <Stack direction="column">
         {/* Intro Header */}
         <Box>
@@ -35,19 +35,23 @@ function IntroduceSecond() {
             >
               <ArrowBack />
             </IconButton>
-            <Link
-              variant="text"
-              sx={{
-                color:
-                  theme === "dark"
-                    ? theme.palette.primary[1000]
-                    : theme.palette.primary[0],
-                textTransform: "capitalize",
-              }}
-              to="/"
-            >
-              Skip
-            </Link>
+          {/* Skip  */}
+          <Link
+            variant="text"
+            sx={{
+              color:
+                theme === "dark"
+                  ? theme.palette.primary[1000]
+                  : theme.palette.primary[0],
+              textTransform: "capitalize",
+              
+            }}
+            to="/way"
+          >
+            <Typography sx={{textDecoration: "underline", color:theme.palette.secondary[0], fontSize: "12px"}}>
+                Skip
+            </Typography>
+          </Link>
           </FlexBetween>
         </Box>
 
@@ -57,6 +61,7 @@ function IntroduceSecond() {
           sx={{
             display: "flex",
             justifyContent: "center",
+            height:"220px"
           }}
         >
           <img
@@ -77,7 +82,7 @@ function IntroduceSecond() {
 
         {/* Intro Bottom Buttons  */}
         <MarginBar />
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: "center", height: "50px", display: "flex", alignItems: "center"   }}>
           <FlexBetween>
             <Box>
               <IconButton component={Link} to="/introduce/first">

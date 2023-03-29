@@ -19,7 +19,10 @@ function MarginBar() {
 function IntroduceThird() {
   const theme = useTheme();
   return (
-    <Box sx={{ width: "100%", px: "1rem" }} theme={theme}>
+    <Box
+      sx={{ width: "100%", pl: "1rem", pr: "2rem", py: "0.5rem" }}
+      theme={theme}
+    >
       {/* Intro Header */}
       <Box>
         <FlexBetween>
@@ -35,6 +38,7 @@ function IntroduceThird() {
           >
             <ArrowBack />
           </IconButton>
+          {/* Skip  */}
           <Link
             variant="text"
             sx={{
@@ -44,9 +48,17 @@ function IntroduceThird() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-            to="/"
+            to="/way"
           >
-            Skip
+            <Typography
+              sx={{
+                textDecoration: "underline",
+                color: theme.palette.secondary[0],
+                fontSize: "12px",
+              }}
+            >
+              Skip
+            </Typography>
           </Link>
         </FlexBetween>
       </Box>
@@ -56,6 +68,7 @@ function IntroduceThird() {
         sx={{
           display: "flex",
           justifyContent: "center",
+          height: "220px",
         }}
       >
         <img
@@ -74,22 +87,22 @@ function IntroduceThird() {
       </Box>
       {/* Intro Bottom Buttons  */}
       <MarginBar />
-      <Box sx={{ textAlign: "center" }}>
-        <FlexBetween>
-          <Box>
-            <IconButton component={Link} to="/introduce/first">
-              <img className="thumbnail" src={SlideEmptyIcon} alt=""></img>
-            </IconButton>
-            <IconButton component={Link} to="/introduce/second">
-              <img className="thumbnail" src={SlideEmptyIcon} alt=""></img>
-            </IconButton>
-            <IconButton component={Link} to="/introduce/third">
-              <img className="thumbnail" src={SlideFillIcon} alt=""></img>
-            </IconButton>
-          </Box>
-          <DefaultButton sx={{}} buttonName={"Start"} />
-        </FlexBetween>
-      </Box>
+      <FlexBetween sx={{ textAlign: "center", height: "50px" }}>
+        <Box>
+          <IconButton component={Link} to="/introduce/first">
+            <img className="thumbnail" src={SlideEmptyIcon} alt=""></img>
+          </IconButton>
+          <IconButton component={Link} to="/introduce/second">
+            <img className="thumbnail" src={SlideEmptyIcon} alt=""></img>
+          </IconButton>
+          <IconButton component={Link} to="/introduce/third">
+            <img className="thumbnail" src={SlideFillIcon} alt=""></img>
+          </IconButton>
+        </Box>
+        <Link to="/way">
+          <DefaultButton buttonName={"Start"} />
+        </Link>
+      </FlexBetween>
     </Box>
   );
 }

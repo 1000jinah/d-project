@@ -18,7 +18,10 @@ function MarginBar() {
 function IntroduceFirst() {
   const theme = useTheme();
   return (
-    <Box sx={{ width: "100%", px: "1rem" }} theme={theme}>
+    <Box
+      sx={{ width: "100%", pl: "1rem", pr: "2rem", py: "0.5rem" }}
+      theme={theme}
+    >
       {/* Intro Header */}
       <Box>
         <FlexBetween>
@@ -34,6 +37,7 @@ function IntroduceFirst() {
           >
             <ArrowBack />
           </IconButton>
+          {/* Skip  */}
           <Link
             variant="text"
             sx={{
@@ -43,9 +47,17 @@ function IntroduceFirst() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-            to="/"
+            to="/way"
           >
-            Skip
+            <Typography
+              sx={{
+                textDecoration: "underline",
+                color: theme.palette.secondary[0],
+                fontSize: "12px",
+              }}
+            >
+              Skip
+            </Typography>
           </Link>
         </FlexBetween>
       </Box>
@@ -56,6 +68,7 @@ function IntroduceFirst() {
         sx={{
           display: "flex",
           justifyContent: "center",
+          height: "220px",
         }}
       >
         <img
@@ -74,7 +87,14 @@ function IntroduceFirst() {
       </Box>
       {/* Intro Bottom Buttons  */}
       <MarginBar />
-      <Box sx={{ textAlign: "center" }}>
+      <Box
+        sx={{
+          textAlign: "center",
+          height: "50px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <FlexBetween>
           <Box>
             <IconButton component={Link} to="/introduce/first">

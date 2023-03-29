@@ -39,11 +39,19 @@ const navItems = [
     icon: <HomeOutlined />,
   },
   {
-    text: "Introduce",
+    text: "Introduce/First",
     icon: <HomeOutlined />,
   },
   {
-    text: "Introduce/First",
+    text: "Way",
+    icon: <HomeOutlined />,
+  },
+  {
+    text: "Goal/First",
+    icon: <HomeOutlined />,
+  },
+  {
+    text: "PortName",
     icon: <HomeOutlined />,
   },
 
