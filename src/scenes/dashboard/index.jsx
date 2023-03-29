@@ -21,35 +21,38 @@ function Dashboard() {
         <EmailPassword />
 
         {showText ? <ConfirmPassword /> : <RememberPassword />}
-
-        <Link to="/introduce/first">
+      </Box>
+      <Box p="0px 1.6rem">
+        <Link to="/introduce">
           <DefaultButton buttonName={showText ? "Sign in" : "Log in"} />
         </Link>
-      </Box>
-      <Box
-        sx={{
-          textAlign: "center",
-          display: "flex",
-          justifyContent: "space-around",
-          flexDirection: "column",
-          height: "50px",
-          color: theme.palette.secondary[500],
-        }}
-      >
-        <Box>
-          <Typography>
-            Already have an account?
-            <span
-              style={{ color: "#fd3f01" }}
-              onClick={() => setShowText(!showText)}
-            >
-              {showText ? " Log in" : " Sign in"}
-            </span>
-          </Typography>
+      </Box>{" "}
+      <Box>
+        <Box
+          sx={{
+            textAlign: "center",
+            display: "flex",
+            justifyContent: "space-around",
+            flexDirection: "column",
+            height: "50px",
+            color: theme.palette.secondary[500],
+          }}
+        >
+          <Box>
+            <Typography>
+              Already have an account?
+              <span
+                style={{ color: "#fd3f01" }}
+                onClick={() => setShowText(!showText)}
+              >
+                {showText ? " Log in" : " Sign in"}
+              </span>
+            </Typography>
+          </Box>
         </Box>
-      </Box>
 
-      <OAuth />
+        <OAuth />
+      </Box>
     </Box>
   );
 }

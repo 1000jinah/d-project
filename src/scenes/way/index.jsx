@@ -93,7 +93,7 @@ export default function CustomizedAccordions() {
         <FlexBetween>
           <IconButton
             component={Link}
-            to="/introduce/first"
+            to="/introduce"
             sx={{
               color:
                 theme === "dark"

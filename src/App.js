@@ -6,10 +6,10 @@ import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 import { themeSettings } from "theme";
 // import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
-// import Introduce from "scenes/introduce/";
-import IntroduceFirst from "scenes/introduce/first";
-import IntroduceSecond from "scenes/introduce/second";
-import IntroduceThird from "scenes/introduce/third";
+import Introduce from "scenes/introduce";
+// import IntroduceFirst from "scenes/introduce/first";
+// import IntroduceSecond from "scenes/introduce/second";
+// import IntroduceThird from "scenes/introduce/third";
 import Way from "scenes/way";
 import GoalFirst from "scenes/goal/first";
 import GoalSecond from "scenes/goal/second";
@@ -44,10 +44,10 @@ function App() {
               {/* <Route element={<Layout />}> */}
               <Route path="/" element={<Navigate to="/dashboard" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
-              {/* <Route path="/introduce" element={<Introduce />} /> */}
-              <Route path="/introduce/first" element={<IntroduceFirst />} />
+              <Route path="/introduce" element={<Introduce />} />
+              {/* <Route path="/introduce/first" element={<IntroduceFirst />} />
               <Route path="/introduce/second" element={<IntroduceSecond />} />
-              <Route path="/introduce/third" element={<IntroduceThird />} />
+              <Route path="/introduce/third" element={<IntroduceThird />} /> */}
               <Route path="/way" element={<Way />} />
               <Route path="/goal/first" element={<GoalFirst />} />
               <Route path="/goal/second" element={<GoalSecond />} />
