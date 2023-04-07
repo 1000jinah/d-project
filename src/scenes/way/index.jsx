@@ -83,12 +83,6 @@ function MarginBar() {
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  "#root": {
-    backgroundColor:
-      expanded === "panel1"
-        ? theme.palette.secondary[800]
-        : theme.palette.secondary[1000],
-  },
   body: {
     backgroundColor: theme.palette.secondary[800],
   },
