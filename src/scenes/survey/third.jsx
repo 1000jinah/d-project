@@ -24,17 +24,32 @@ import StepCircleIcon from "../../assets/icon_golfball_orange.svg";
 import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
+import StepFlagOrangeIcon from "../../assets/icon_flag_orange.svg";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
-
-function MarginBar() {
+import { useTranslation } from "react-i18next";
+const SurveyThirdHeader = () => {
+  const { t } = useTranslation("page");
   return (
-    <Box
-      sx={{
-        height: 35,
-      }}
-    />
+    <Header title={t("SurveyThirdTitle")} subtitle={t("SurveyThirdDescipt")} />
   );
-}
+};
+// const EnMoney = () => {
+//   const { t } = useTranslation("page");
+//   return <span>{t("EnMoney")}</span>;
+// };
+// const JpMoney = () => {
+//   const { t } = useTranslation("page");
+//   return <span>{t("JpMoney")}</span>;
+// };
+// function MarginBar() {
+//   return (
+//     <Box
+//       sx={{
+//         height: 35,
+//       }}
+//     />
+//   );
+// }
 function StepSpaceBar() {
   return (
     <Box
@@ -47,7 +62,32 @@ function StepSpaceBar() {
 function SurveyThird() {
   const theme = useTheme();
   //   const [message, setMessage] = useState("");
-
+  const Skip = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography
+        sx={{
+          textDecoration: "underline",
+          color: theme.palette.secondary[0],
+          fontSize: "12px",
+        }}
+      >
+        {t("Skip")}
+      </Typography>
+    );
+  };
+  const Continue = () => {
+    const { t } = useTranslation("page");
+    return (
+      <DefaultButton
+        buttonName={t("Continue")}
+        sx={{
+          p: "20px",
+          backgroundColor: theme.palette.secondary[100],
+        }}
+      />
+    );
+  };
   return (
     <Box
       theme={theme}
@@ -121,13 +161,26 @@ function SurveyThird() {
               }}
             >
               <Box
-                sx={{ width: "80%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  width:
+                    localStorage.getItem("language") === "jp" ? "100%" : "80%",
+                  height: "100%",
+                  background: "#ff754b",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
             <img
-              src={StepEmptyCircleIcon}
-              alt={StepEmptyCircleIcon}
+              src={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
+              alt={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
               width={"15px"}
             />
             <StepSpaceBar />
@@ -140,13 +193,26 @@ function SurveyThird() {
               }}
             >
               <Box
-                sx={{ width: "0%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  width:
+                    localStorage.getItem("language") === "jp" ? "100%" : "0%",
+                  height: "100%",
+                  background: "#ff754b",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
             <img
-              src={StepEmptyCircleIcon}
-              alt={StepEmptyCircleIcon}
+              src={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
+              alt={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
               width={"15px"}
             />
             <StepSpaceBar />
@@ -159,13 +225,29 @@ function SurveyThird() {
               }}
             >
               <Box
-                sx={{ width: "0%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  width:
+                    localStorage.getItem("language") === "jp" ? "100%" : "0%",
+                  height: "100%",
+                  background: "#ff754b",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
-            <img src={StepFlagIcon} alt={StepFlagIcon} width={"15px"} />
+            <img
+              src={
+                localStorage.getItem("language") === "jp"
+                  ? StepFlagOrangeIcon
+                  : StepFlagIcon
+              }
+              alt={
+                localStorage.getItem("language") === "jp"
+                  ? StepFlagOrangeIcon
+                  : StepFlagIcon
+              }
+              width={"15px"}
+            />
           </FlexBetween>
-
           {/* Skip  */}
           <Link
             variant="text"
@@ -176,17 +258,10 @@ function SurveyThird() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
-            <Typography
-              sx={{
-                textDecoration: "underline",
-                color: theme.palette.secondary[0],
-                fontSize: "12px",
-              }}
-            >
-              Skip
-            </Typography>
+            {/* Skip */}
+            <Skip />
           </Link>
         </FlexBetween>
       </Box>
@@ -194,17 +269,12 @@ function SurveyThird() {
         mt="3.2rem"
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
-        <Header
-          title={"What level of profit do you expect?"}
-          subtitle={"Please check the appropriate items."}
-        />
-        {/* <Box sx={{ textAlign: "center" }}>
-          <img src={CoinQueIcon} alt={CoinQueIcon} />
-        </Box> */}
-        <MarginBar />
+        {/* Header */}
+        <SurveyThirdHeader />
+        {/* <MarginBar /> */}
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup
@@ -214,7 +284,7 @@ function SurveyThird() {
           >
             {/* Base ±10% */}
 
-            <Box sx={{}}>
+            <Box sx={{ height: "32px" }}>
               <Box
                 sx={{
                   width: "100%",
@@ -233,7 +303,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $490M
+                  {localStorage.getItem("language") === "jp"
+                    ? "490万円"
+                    : "$490M"}
                 </Box>
               </Box>
 
@@ -255,7 +327,10 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $-250M
+                  {" "}
+                  {localStorage.getItem("language") === "jp"
+                    ? "-250万円"
+                    : "$-250M"}
                 </Box>
               </Box>
             </Box>
@@ -272,12 +347,16 @@ function SurveyThird() {
               }}
               value="1"
               control={<Radio />}
-              label="Base ±10% range of principai"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "元金の基準±10％の範囲"
+                  : "Base ±10% range of principai"
+              }
               labelPlacement="start"
             />
             {/* Base ±20% */}
 
-            <Box sx={{}}>
+            <Box sx={{ height: "32px" }}>
               <Box
                 sx={{
                   width: "100%",
@@ -296,7 +375,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $520M
+                  {localStorage.getItem("language") === "jp"
+                    ? "520万円"
+                    : "$520M"}
                 </Box>
               </Box>
 
@@ -318,7 +399,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $-300M
+                  {localStorage.getItem("language") === "jp"
+                    ? "-300万円"
+                    : "$-300M"}
                 </Box>
               </Box>
             </Box>
@@ -334,11 +417,15 @@ function SurveyThird() {
               }}
               value="2"
               control={<Radio />}
-              label="Base ±20% range of principai"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "元金の基準±20％の範囲"
+                  : "Base ±20% range of principai"
+              }
               labelPlacement="start"
             />
             {/* Base ±50% */}
-            <Box sx={{}}>
+            <Box sx={{ height: "32px" }}>
               <Box
                 sx={{
                   width: "100%",
@@ -357,7 +444,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $550M
+                  {localStorage.getItem("language") === "jp"
+                    ? "550万円"
+                    : "$550M"}
                 </Box>
               </Box>
 
@@ -379,7 +468,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $-330M
+                  {localStorage.getItem("language") === "jp"
+                    ? "-330万円"
+                    : "$-330M"}
                 </Box>
               </Box>
             </Box>
@@ -396,11 +487,15 @@ function SurveyThird() {
               }}
               value="3"
               control={<Radio />}
-              label="Base ±50% range of principai"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "元金の基準±50％の範囲"
+                  : "Base ±50% range of principai"
+              }
               labelPlacement="start"
             />
             {/* Base ±100% */}
-            <Box sx={{}}>
+            <Box sx={{ height: "32px" }}>
               <Box
                 sx={{
                   width: "100%",
@@ -419,7 +514,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $600M
+                  {localStorage.getItem("language") === "jp"
+                    ? "600万円"
+                    : "$600M"}
                 </Box>
               </Box>
 
@@ -441,7 +538,9 @@ function SurveyThird() {
                     pr: "3px",
                   }}
                 >
-                  $-420M
+                  {localStorage.getItem("language") === "jp"
+                    ? "420万円"
+                    : "$-420M"}
                 </Box>
               </Box>
             </Box>
@@ -458,7 +557,11 @@ function SurveyThird() {
               }}
               value="4"
               control={<Radio />}
-              label="Base ±100% range of principai"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "元金の基準±100％の範囲"
+                  : "Base ±100% range of principai"
+              }
               labelPlacement="start"
             />
           </RadioGroup>
@@ -473,14 +576,11 @@ function SurveyThird() {
             background: "#fff",
           }}
         >
-          <Link to={"/survey/fourth"} sx={{}}>
-            <DefaultButton
-              buttonName={"Continue"}
-              sx={{
-                p: "20px",
-                backgroundColor: theme.palette.secondary[100],
-              }}
-            />
+          <Link to={localStorage.getItem("language") === "jp"
+                  ? "/projection/default"
+                  : "/survey/fourth"} sx={{}}>
+            {/* Continue */}
+            <Continue />
           </Link>
         </Box>
       </Box>

@@ -26,15 +26,15 @@ import StepCircleIcon from "../../assets/icon_golfball_orange.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 
-function MarginBar() {
-  return (
-    <Box
-      sx={{
-        height: 35,
-      }}
-    />
-  );
-}
+// function MarginBar() {
+//   return (
+//     <Box
+//       sx={{
+//         height: 35,
+//       }}
+//     />
+//   );
+// }
 function StepSpaceBar() {
   return (
     <Box
@@ -184,9 +184,10 @@ function SurveyTenth() {
       </Box>
       <Box
         mt="3.2rem"
+        mb="3rem"
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
@@ -199,7 +200,7 @@ function SurveyTenth() {
         {/* <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />
         </Box> */}
-        <MarginBar />
+        {/* <MarginBar /> */}
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup

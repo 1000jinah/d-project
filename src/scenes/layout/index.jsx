@@ -6,6 +6,19 @@ import Navbar from "components/Navbar";
 import Sidebar from "components/Sidebar";
 
 const Layout = () => {
+
+  //   useEffect(() => {
+  //     if (localStorage.getItem('lang') === 'korea') {
+  //         i18n.changeLanguage('ko');
+  //     }
+  //     else if (localStorage.getItem("lang") === 'usa') {
+  //         i18n.changeLanguage('en');
+  //     }
+  //     else if (localStorage.getItem("lang") === 'japan') {
+  //         i18n.changeLanguage('jp');
+  //     }
+  // }, [localStorage.getItem('lang')]);
+
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   return (

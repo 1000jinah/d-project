@@ -10,6 +10,98 @@ import { Box, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
+import { useTranslation } from "react-i18next";
+const GoalHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Header
+      sx={{ whiteSpace: "pre-line" }}
+      title={t("GoalSecondTitle")}
+      subtitle={t("GoalIntro")}
+      moresubtitle={t("GoalDescript")}
+    />
+  );
+};
+const Retirement = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "20px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("Retirement")}
+    </Typography>
+  );
+};
+const OwnHome = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "20px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("OwnHome")}
+    </Typography>
+  );
+};
+const Savings = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "20px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("Savings")}
+    </Typography>
+  );
+};
+const WeddingFund = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "20px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("WeddingFund")}
+    </Typography>
+  );
+};
+const Education = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "20px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("Education")}
+    </Typography>
+  );
+};
 const GoalSecond = () => {
   const theme = useTheme();
 
@@ -26,7 +118,7 @@ const GoalSecond = () => {
     <Box sx={{ width: "100%" }} theme={theme}>
       <Box
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
           pl: "1rem",
           pr: "2rem",
           py: "0.5rem",
@@ -48,18 +140,15 @@ const GoalSecond = () => {
         </FlexBetween>
       </Box>
       <Box
-        p="1.2rem 1.6rem" height="100%" minHeight="667px"
+        p="1.2rem 1.6rem"
+        height="100%"
+        minHeight="667px"
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
         }}
       >
         {/* Header */}
-        <Header
-          sx={{ whiteSpace: "pre-line" }}
-          title={"Your Goal"}
-          subtitle={`Nice to meet you.`}
-          moresubtitle={`What's your primary goal for this investment?`}
-        />
+        <GoalHeader />
         {/* Content */}
         <Stack direction={"column"}>
           <Box
@@ -67,7 +156,7 @@ const GoalSecond = () => {
               textDecoration: "none",
             }}
           >
-            {/* Retirement */}
+            {/* Retirement Box */}
             <FlexBetween
               component={Link}
               to="/portname"
@@ -75,34 +164,23 @@ const GoalSecond = () => {
                 position: "relative",
                 backgroundColor: theme.palette.secondary[1000],
                 border: "1px solid #000",
-               p: "1rem 0.8rem",
+                p: "1rem 0.8rem",
                 boxSizing: "border-box",
               }}
             >
               <Box>
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    pb: "20px",
-                    color: theme.palette.secondary[0],
-                  }}
-                >
-                  Retirement
-                </Typography>
-
+                {/* Retirement */}
+                <Retirement />
                 <IconButton sx={{ p: "0px" }}>
                   <img src={NextRoundIcon} alt={NextRoundIcon} />
                 </IconButton>
               </Box>
-              <Box  sx={{ position: "absolute", bottom: "2px", right: "15px" }}>
+              <Box sx={{ position: "absolute", bottom: "2px", right: "15px" }}>
                 <img width={"82px"} src={AirBalloonIcon} alt={AirBalloonIcon} />
               </Box>
             </FlexBetween>
-
             <MarginBar />
-            {/* Own home & Savings */}
-
+            {/* Own home & Savings Box*/}
             <FlexBetween>
               <FlexBetween
                 component={Link}
@@ -112,22 +190,13 @@ const GoalSecond = () => {
                   backgroundColor: theme.palette.secondary[1000],
                   border: "1px solid #000",
                   width: "47%",
-                 p: "1rem 0.8rem",
+                  p: "1rem 0.8rem",
                   boxSizing: "border-box",
                 }}
               >
                 <Box>
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      pb: "20px",
-                      color: theme.palette.secondary[0],
-                    }}
-                  >
-                    Own home
-                  </Typography>
-
+                  {/* OwnHome */}
+                  <OwnHome />
                   <IconButton sx={{ p: "0px" }}>
                     <img src={NextRoundIcon} alt={NextRoundIcon} />
                   </IconButton>
@@ -147,22 +216,13 @@ const GoalSecond = () => {
                   position: "relative",
                   backgroundColor: theme.palette.secondary[1000],
                   border: "1px solid #000",
-                 p: "1rem 0.8rem",
+                  p: "1rem 0.8rem",
                   boxSizing: "border-box",
                 }}
               >
                 <Box>
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      pb: "20px",
-                      color: theme.palette.secondary[0],
-                    }}
-                  >
-                    Savings
-                  </Typography>
-
+                  {/* Savings */}
+                  <Savings />
                   <IconButton sx={{ p: "0px" }}>
                     <img src={NextRoundIcon} alt={NextRoundIcon} />
                   </IconButton>
@@ -174,10 +234,8 @@ const GoalSecond = () => {
                 </Box>
               </FlexBetween>
             </FlexBetween>
-
             <MarginBar />
             {/* Wedding fund & Education */}
-
             <FlexBetween>
               <FlexBetween
                 component={Link}
@@ -187,22 +245,13 @@ const GoalSecond = () => {
                   backgroundColor: theme.palette.secondary[1000],
                   border: "1px solid #000",
                   width: "47%",
-                 p: "1rem 0.8rem",
+                  p: "1rem 0.8rem",
                   boxSizing: "border-box",
                 }}
               >
                 <Box>
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      pb: "20px",
-                      color: theme.palette.secondary[0],
-                    }}
-                  >
-                    Wedding fund
-                  </Typography>
-
+                  {/* WeddingFund */}
+                  <WeddingFund />
                   <IconButton sx={{ p: "0px" }}>
                     <img src={NextRoundIcon} alt={NextRoundIcon} />
                   </IconButton>
@@ -217,7 +266,6 @@ const GoalSecond = () => {
                   />
                 </Box>
               </FlexBetween>
-
               <FlexBetween
                 component={Link}
                 to="/portname"
@@ -226,22 +274,13 @@ const GoalSecond = () => {
                   position: "relative",
                   backgroundColor: theme.palette.secondary[1000],
                   border: "1px solid #000",
-                 p: "1rem 0.8rem",
+                  p: "1rem 0.8rem",
                   boxSizing: "border-box",
                 }}
               >
                 <Box>
-                  <Typography
-                    sx={{
-                      fontSize: "18px",
-                      fontWeight: "bold",
-                      pb: "20px",
-                      color: theme.palette.secondary[0],
-                    }}
-                  >
-                    Education
-                  </Typography>
-
+                  {/* Education */}
+                  <Education />
                   <IconButton sx={{ p: "0px" }}>
                     <img src={NextRoundIcon} alt={NextRoundIcon} />
                   </IconButton>

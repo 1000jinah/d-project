@@ -2,5 +2,5 @@
     "compilerOptions": {
         "baseUrl": "src"
     },
-    "include": ["src", "../practice/scenes/introduce/index.jsx", "../practice/components/asda", "../practice/components/MyPageChart copy.jsx"]
+    "include": ["src"]
 }

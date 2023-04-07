@@ -27,11 +27,11 @@ export default function BasicTable() {
       sx={{
         boxShadow: "none",
         "& .MuiTableCell-root": {
-          padding: "10px",
+          padding: "5px",
         },
       }}
     >
-      <Table sx={{ minWidth: 350 }} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableBody pb={2}>
           {rows.map((row) => (
             <TableRow
@@ -62,14 +62,14 @@ export default function BasicTable() {
                   }}
                 ></Box>
               </TableCell>
-              <TableCell sx={{ fontSize: "14px", p: "0px" }}>
+              <TableCell sx={{ fontSize: "13px", p: "0px" }}>
                 {row.name}
               </TableCell>
-              <TableCell sx={{ fontSize: "14px", p: "0px" }}>
+              <TableCell sx={{ fontSize: "13px", p: "0px" }}>
                 {row.detail}
               </TableCell>
               <TableCell
-                sx={{ fontWeight: "bold", p: "0px", fontSize: "16px" }}
+                sx={{ fontWeight: "bold", p: "0px", fontSize: "15px" }}
               >
                 {row.percentage}
               </TableCell>

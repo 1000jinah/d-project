@@ -14,6 +14,7 @@ import ArrowShareIcon from "../assets/icon_arrow_share.svg";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 // import { textAlign } from "@mui/system";
+import { useTranslation } from "react-i18next";
 
 const drawerBleeding = 64;
 
@@ -58,6 +59,118 @@ function SwipeableEdgeDrawer(props) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
+  const DownloadButton = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Button
+        onClick={toggleDrawer(true)}
+        sx={{
+          borderRadius: "0px",
+          color: "#fff",
+          py: 1,
+          boxSizing: "border-box",
+          width: "100%",
+          fontWeight: "bold",
+          fontSize: "16px",
+          backgroundColor: "#000",
+          textTransform: "capitalize",
+        }}
+      >
+        {t("Submit")}
+      </Button>
+    );
+  };
+
+  const DownloadPDFTitle = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+        {t("DownloadPDF")}
+      </Typography>
+    );
+  };
+
+  const DownloadPDFDescript = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography sx={{ lineHeight: "1.8", color: "#b3b3b3" }}>
+        {t("DownloadPDFDescript")}
+      </Typography>
+    );
+  };
+
+  const DownloadPDFInputs = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box sx={{ width: "100%", padding: "30px", pt: 3 }}>
+        <FormControl variant="standard" sx={{ minWidth: "100%" }}>
+          <Input
+            type="text"
+            id="Name"
+            name="Name"
+            placeholder={t("Name")}
+            sx={{ padding: "4px 0px 8px" }}
+          />
+        </FormControl>
+        <MarginBar />
+        <FormControl variant="standard" sx={{ minWidth: "100%" }}>
+          <Input
+            type="text"
+            id="MobileNumber"
+            name="Mobile Number"
+            placeholder={t("MobileNumber")}
+            sx={{ padding: "4px 0px 8px" }}
+          />
+        </FormControl>
+        <MarginBar />
+        <FormControl variant="standard" sx={{ minWidth: "100%" }}>
+          <Input
+            type="text"
+            id="EmailAddress"
+            name="Email Address"
+            placeholder={t("EmailAddress")}
+            sx={{ padding: "4px 0px 8px" }}
+          />
+        </FormControl>
+        <Button
+          sx={{
+            mt: "40px",
+            borderRadius: "0px",
+            color: "#fff",
+            py: 1,
+            boxSizing: "border-box",
+            width: "100%",
+            fontWeight: "bold",
+            fontSize: "16px",
+            backgroundColor: "#000",
+            textTransform: "capitalize",
+          }}
+        >
+          {t("Submit")}
+        </Button>
+        <Box
+          sx={{
+            mt: 3,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon width="auto">
+            <img
+              src={ArrowShareIcon}
+              alt={ArrowShareIcon}
+              width={"13px"}
+              height={"13px"}
+            />
+          </Icon>
+          <Typography fontWeight={"bold"} color="#fd3f01" ml={1}>
+            {t("Share")}
+          </Typography>
+        </Box>
+      </Box>
+    );
+  };
 
   // This is used only for the example
   const container =
@@ -83,22 +196,8 @@ function SwipeableEdgeDrawer(props) {
           textAlign: "center",
         }}
       >
-        <Button
-          onClick={toggleDrawer(true)}
-          sx={{
-            borderRadius: "0px",
-            color: "#fff",
-            py: 1,
-            boxSizing: "border-box",
-            width: "100%",
-            fontWeight: "bold",
-            fontSize: "16px",
-            backgroundColor: "#000",
-            textTransform: "capitalize",
-          }}
-        >
-          Download
-        </Button>
+        {/* DownloadButton */}
+        <DownloadButton />
       </Box>
       <SwipeableDrawer
         container={container}
@@ -153,79 +252,12 @@ function SwipeableEdgeDrawer(props) {
           <Icon sx={{ width: "127px", height: "96px" }}>
             <img src={DownPDFIcon} alt={DownPDFIcon} />
           </Icon>
-          <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-            Download PDF
-          </Typography>
-          <Typography sx={{ lineHeight: "1.8", color: "#808080" }}>
-            Please write down your info for downloading.
-          </Typography>
-          <Box sx={{ width: "100%", padding: "30px", pt: 3 }}>
-            <FormControl variant="standard" sx={{ minWidth: "100%" }}>
-              <Input
-                type="text"
-                id="Name"
-                name="Name"
-                placeholder="Name"
-                sx={{ padding: "4px 0px 8px" }}
-              />
-            </FormControl>
-            <MarginBar />
-            <FormControl variant="standard" sx={{ minWidth: "100%" }}>
-              <Input
-                type="text"
-                id="MobileNumber"
-                name="Mobile Number"
-                placeholder="Mobile Number"
-                sx={{ padding: "4px 0px 8px" }}
-              />
-            </FormControl>
-            <MarginBar />
-            <FormControl variant="standard" sx={{ minWidth: "100%" }}>
-              <Input
-                type="text"
-                id="EmailAddress"
-                name="Email Address"
-                placeholder="Email Address"
-                sx={{ padding: "4px 0px 8px" }}
-              />
-            </FormControl>
-            <Button
-              sx={{
-                mt: "40px",
-                borderRadius: "0px",
-                color: "#fff",
-                py: 1,
-                boxSizing: "border-box",
-                width: "100%",
-                fontWeight: "bold",
-                fontSize: "16px",
-                backgroundColor: "#000",
-                textTransform: "capitalize",
-              }}
-            >
-              Submit
-            </Button>
-            <Box
-              sx={{
-                mt: 3,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Icon width="auto">
-                <img
-                  src={ArrowShareIcon}
-                  alt={ArrowShareIcon}
-                  width={"13px"}
-                  height={"13px"}
-                />
-              </Icon>
-              <Typography fontWeight={"bold"} color="#fd3f01" ml={1}>
-                Share
-              </Typography>
-            </Box>
-          </Box>
+          {/* DownloadPDFTitle */}
+          <DownloadPDFTitle />
+          {/* DownloadPDFDescript */}
+          <DownloadPDFDescript />
+          {/* DownloadPDFInputs */}
+          <DownloadPDFInputs />
         </Box>
       </SwipeableDrawer>
     </Root>

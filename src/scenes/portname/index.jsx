@@ -5,6 +5,26 @@ import DefaultButton from "components/DefaultButton";
 import FlexBetween from "components/FlexBetween";
 import Header from "components/Header";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+const PortNameHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Header
+      title={t("PortNameTitle")}
+      subtitle={t("PortNameDescript")}
+      moresubtitle={
+        localStorage.getItem("language") === "en"
+          ? "We can help you build one that works for you."
+          : null
+      } // if 영어일 때만,
+    />
+  );
+};
+const Continue = () => {
+  const { t } = useTranslation("page");
+  return <DefaultButton buttonName={t("Continue")} />;
+};
+
 function MarginBar() {
   return (
     <Box
@@ -17,7 +37,19 @@ function MarginBar() {
 function PortfolioName() {
   const theme = useTheme();
   const [message, setMessage] = useState("");
-
+  const Example = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Input
+        type="text"
+        id="message"
+        name="message"
+        value={message}
+        onChange={(event) => setMessage(event.target.value)}
+        placeholder={t("Example")}
+      />
+    );
+  };
   return (
     <Box
       theme={theme}
@@ -50,12 +82,12 @@ function PortfolioName() {
     >
       <Box
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
           px: "1rem",
           py: "0.5rem",
         }}
       >
-        <FlexBetween >
+        <FlexBetween>
           <IconButton
             component={Link}
             to="/goal/first"
@@ -75,37 +107,24 @@ function PortfolioName() {
         height="100%"
         minHeight="667px"
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
         }}
       >
-        <Header
-        
-          title={"Name Your Portfolio"}
-          subtitle={
-            "75% of people who are financial secure build and manage a finacial plan."
-          }
-          moresubtitle={"We can help you build one that works for you."}
-        />
-
+        {/* PortNameHeader */}
+        <PortNameHeader />
         <FormControl variant="standard" sx={{ width: "100%", height: "100%" }}>
-          <Input
-            type="text"
-            id="message"
-            name="message"
-            placeholder="Example: Sending our youngest to college"
-            value={message}
-            onChange={(event) => setMessage(event.target.value)}
-          />
+          <Example />
         </FormControl>
         <MarginBar />
-        <Link to={!message ? "" : "/aboutyou"}>
-          <DefaultButton
-            buttonName={"Continue"}
+        <Link to={"/aboutyou"}>
+          {/* <Link to={!message ? "" : "/aboutyou"}> */}
+          {/* Continue */}
+          <Continue
             sx={{
-              backgroundColor:
-                !message === true ? theme.palette.secondary[100] : "#000",
+              backgroundColor: "#000",
             }}
           />
+          {/* !message === true ? theme.palette.secondary[100] : "#000" */}
         </Link>
       </Box>
     </Box>

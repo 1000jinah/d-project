@@ -8,6 +8,66 @@ import { Box, IconButton, Stack, Typography, useTheme } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
+import { useTranslation } from "react-i18next";
+const GoalHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Header
+      sx={{ whiteSpace: "pre-line" }}
+      title={t("GoalFirstTitle")}
+      subtitle={t("GoalIntro")}
+      moresubtitle={t("GoalDescript")}
+    />
+  );
+};
+const JustInvest = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "25px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("JustInvest")}
+    </Typography>
+  );
+};
+const LowTaxProduct = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "25px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("LowTaxProduct")}
+    </Typography>
+  );
+};
+const GoalInvest = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography
+      sx={{
+        fontSize: "18px",
+        fontWeight: "bold",
+        pb: "25px",
+        color: "#000",
+        // theme.palette.secondary[0],
+      }}
+    >
+      {t("GoalInvest")}
+    </Typography>
+  );
+};
 const GoalFirst = () => {
   const theme = useTheme();
 
@@ -24,7 +84,7 @@ const GoalFirst = () => {
     <Box sx={{ width: "100%" }} theme={theme}>
       <Box
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
           pl: "1rem",
           pr: "2rem",
           py: "0.5rem",
@@ -46,18 +106,15 @@ const GoalFirst = () => {
         </FlexBetween>
       </Box>
       <Box
-        p="1.2rem 1.6rem" height="100%" minHeight="667px"
+        p="1.2rem 1.6rem"
+        height="100%"
+        minHeight="667px"
         sx={{
-           backgroundColor: "#fafafa",
+          backgroundColor: "#fafafa",
         }}
       >
         {/* Header */}
-        <Header
-          sx={{ whiteSpace: "pre-line" }}
-          title={"Your Goal"}
-          subtitle={`Nice to meet you.`}
-          moresubtitle={`What's your primary goal for this investment?`}
-        />
+        <GoalHeader />
         {/* Content */}
         <Stack direction={"column"}>
           <Box
@@ -65,7 +122,7 @@ const GoalFirst = () => {
               textDecoration: "none",
             }}
           >
-            {/* JUST INVEST */}
+            {/* JUST INVEST Box */}
             <FlexBetween
               component={Link}
               to="/goal/second"
@@ -77,17 +134,8 @@ const GoalFirst = () => {
               }}
             >
               <Box>
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    pb: "25px",
-                    color: theme.palette.secondary[0],
-                  }}
-                >
-                  Just Invest
-                </Typography>
-
+                {/* Just Invest */}
+                <JustInvest />
                 <IconButton sx={{ p: "0px" }}>
                   <img src={NextRoundIcon} alt={NextRoundIcon} />
                 </IconButton>
@@ -96,11 +144,8 @@ const GoalFirst = () => {
                 <img src={JustInvestIcon} alt={JustInvestIcon} />
               </Box>
             </FlexBetween>
-
             <MarginBar />
-
-            {/* LOW TAX PRODUCT */}
-
+            {/* LOW TAX PRODUCT Box*/}
             <FlexBetween
               component={Link}
               to="/goal/second"
@@ -112,17 +157,8 @@ const GoalFirst = () => {
               }}
             >
               <Box>
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    pb: "25px",
-                    color: theme.palette.secondary[0],
-                  }}
-                >
-                  Low Tax Product
-                </Typography>
-
+                {/* Low Tax Product */}
+                <LowTaxProduct />
                 <IconButton sx={{ p: "0px" }}>
                   <img src={NextRoundIcon} alt={NextRoundIcon} />
                 </IconButton>
@@ -131,11 +167,8 @@ const GoalFirst = () => {
                 <img src={LowTaxIcon} alt={LowTaxIcon} />
               </Box>
             </FlexBetween>
-
             <MarginBar />
-
-            {/* GOAL INVEST */}
-
+            {/* GOAL INVEST Box */}
             <FlexBetween
               component={Link}
               to="/goal/second"
@@ -147,17 +180,8 @@ const GoalFirst = () => {
               }}
             >
               <Box>
-                <Typography
-                  sx={{
-                    fontSize: "18px",
-                    fontWeight: "bold",
-                    pb: "25px",
-                    color: theme.palette.secondary[0],
-                  }}
-                >
-                  Goal Invest
-                </Typography>
-
+                {/* GoalInvest */}
+                <GoalInvest />
                 <IconButton sx={{ p: "0px" }}>
                   <img src={NextRoundIcon} alt={NextRoundIcon} />
                 </IconButton>

@@ -1,12 +1,13 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 
-import Checkbox from "@mui/material/Checkbox"; 
+import Checkbox from "@mui/material/Checkbox";
 import { FormGroup, FormControlLabel, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import FlexBetween from "./FlexBetween";
-import unCheckRadioIcon from "../assets/btn_radiobutton_login_unselect.svg"
-import CheckRadioIcon from "../assets/btn_radiobutton_login_selected.svg"
+import unCheckRadioIcon from "../assets/btn_radiobutton_login_unselect.svg";
+import CheckRadioIcon from "../assets/btn_radiobutton_login_selected.svg";
+import { useTranslation } from "react-i18next";
 
 function MarginBar() {
   return (
@@ -19,6 +20,43 @@ function MarginBar() {
 }
 export default function RememberPassword() {
   const theme = useTheme();
+
+  const RememberPasswordBox = () => {
+    const { t } = useTranslation("page");
+    return (
+      <FlexBetween
+        sx={{
+          height: "28px",
+        }}
+      >
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Checkbox
+                defaultChecked
+                icon={
+                  <img
+                    className="thumbnail"
+                    src={unCheckRadioIcon}
+                    alt="unCheckRadioIcon"
+                  ></img>
+                }
+                checkedIcon={
+                  <img
+                    className="thumbnail"
+                    src={CheckRadioIcon}
+                    alt="CheckRadioIcon"
+                  ></img>
+                }
+              />
+            }
+            label={t("RememberAccount")}
+          />
+        </FormGroup>
+        <Typography>{t("ForgotPassword")}</Typography>
+      </FlexBetween>
+    );
+  };
 
   return (
     <Box
@@ -49,9 +87,13 @@ export default function RememberPassword() {
         },
         "&  .MuiFormControlLabel-root .MuiFormControlLabel-label": {
           color: theme.palette.secondary[500],
+          fontSize: "13px",
+          whiteSpace: "pre",
         },
         "& .MuiTypography-root": {
           color: theme.palette.secondary[500],
+          fontSize: "13px",
+          whiteSpace: "pre",
         },
         "& .MuiSvgIcon-root": {
           width: "0.95em",
@@ -63,23 +105,8 @@ export default function RememberPassword() {
       autoComplete="off"
     >
       <MarginBar />
-      <FlexBetween sx={{
-        height: "28px"
-      }}>
-        <FormGroup>
-          <FormControlLabel
-            control={
-              <Checkbox
-                defaultChecked
-                icon={<img className="thumbnail" src={unCheckRadioIcon} alt="unCheckRadioIcon"></img>  }
-                checkedIcon={<img className="thumbnail" src={CheckRadioIcon} alt="CheckRadioIcon"></img>}
-              />
-            }
-            label="Remember Account"
-          />
-        </FormGroup>
-        <Typography>Forget Password?</Typography>
-      </FlexBetween>
+      {/* RememberPasswordBox */}
+      <RememberPasswordBox />
     </Box>
   );
 }

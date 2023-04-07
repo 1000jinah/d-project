@@ -13,16 +13,35 @@ function createData(name, percentage) {
 }
 
 const rows = [
-  createData("Retirement Age", "65 Age"),
-  createData("Retirement income", "$15M"),
-  createData("Initial Investment Amount", "$10M"),
-  createData("Monthly Investment Amount", "$10M"),
+  createData(
+    localStorage.getItem("language") === "jp"
+      ? "退職する予定年齢"
+      : "Retirement Age",
+    localStorage.getItem("language") === "jp" ? "65歳" : "65 Age"
+  ),
+  createData(
+    localStorage.getItem("language") === "jp"
+      ? "退職後の収入"
+      : "Retirement income",
+    localStorage.getItem("language") === "jp" ? "15万円" : "$15M"
+  ),
+  createData(
+    localStorage.getItem("language") === "jp"
+      ? "初期投資金額"
+      : "Initial Investment Amount",
+    localStorage.getItem("language") === "jp" ? "10万円" : "$10M"
+  ),
+  createData(
+    localStorage.getItem("language") === "jp"
+      ? "毎月積立額"
+      : "Monthly Investment Amount",
+    localStorage.getItem("language") === "jp" ? "5年" : "5 Year"
+  ),
 ];
 
 export default function ResultTable() {
   return (
     <TableContainer
-
       component={Paper}
       sx={{
         boxShadow: "none",
@@ -31,7 +50,7 @@ export default function ResultTable() {
         },
       }}
     >
-      <Table  sx={{ minWidth: 350 }} aria-label="simple table">
+      <Table sx={{ minWidth: 350 }} aria-label="simple table">
         <TableBody>
           {rows.map((row) => (
             <TableRow

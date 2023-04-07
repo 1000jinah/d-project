@@ -25,15 +25,15 @@ import StepCircleIcon from "../../assets/icon_golfball_orange.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 
-function MarginBar() {
-  return (
-    <Box
-      sx={{
-        height: 35,
-      }}
-    />
-  );
-}
+// function MarginBar() {
+//   return (
+//     <Box
+//       sx={{
+//         height: 1,
+//       }}
+//     />
+//   );
+// }
 function StepSpaceBar() {
   return (
     <Box
@@ -183,9 +183,10 @@ function SurveyEighth() {
       </Box>
       <Box
         mt="3.2rem"
+        mb="3rem"
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
@@ -193,12 +194,14 @@ function SurveyEighth() {
           subtitle={
             "International investing can help increase your portfolio's diversification as it enables you to spread risk across a variety of economies and financial markets."
           }
-          moresubtitle={"International investments include developed markets, such as France and Germany, with well -established companies and listing standards similar to the U.S and to also include more speculative emerging markets in countries with rapid but volatile economic growth. Which statement best reflects your view on international investing?"}
+          moresubtitle={
+            "International investments include developed markets, such as France and Germany, with well -established companies and listing standards similar to the U.S and to also include more speculative emerging markets in countries with rapid but volatile economic growth. Which statement best reflects your view on international investing?"
+          }
         />
         {/* <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />
         </Box> */}
-        <MarginBar />
+        {/* <MarginBar /> */}
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup

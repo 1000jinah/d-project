@@ -30,7 +30,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        height: 35,
+        height: 15,
       }}
     />
   );
@@ -172,7 +172,7 @@ function SurveyFourth() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
             <Typography
               sx={{
@@ -188,13 +188,14 @@ function SurveyFourth() {
       </Box>
       <Box
         mt="3.2rem"
+        mb="3rem"
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-         title={"Reaction to Finanical Market Declines"}
+          title={"Reaction to Finanical Market Declines"}
           subtitle={
             "What has been your personal experience with financial market declines? Consider your feelings during the steeo market declines that occurred during the Great Recession when the S&P 500 Index lost more than 40% over a six month period from September 1, 2008 through February 28, 2009. How did you (or would you have) reacted during that period"
           }

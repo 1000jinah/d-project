@@ -1,4 +1,5 @@
 import * as React from "react";
+// import { useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import { Box, useTheme, IconButton } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
@@ -13,7 +14,63 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 import DefaultButton from "components/DefaultButton";
 import { ArrowBack } from "@mui/icons-material";
-
+import TranslateButton from "../../components/Translate";
+import { useTranslation } from "react-i18next";
+const QuickTitle = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
+      {t("Quick")}
+    </Typography>
+  );
+};
+const QuickDescript = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography sx={{ color: "#808080" }}>
+      {/* theme.palette.secondary[500] */}
+      {t("QuickDescript")}
+    </Typography>
+  );
+};
+const CompreTitle = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold" }}>
+      {t("Comprehensive")}
+    </Typography>
+  );
+};
+const CompreDescript = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography sx={{ color: "#808080" }}>
+      {/* theme.palette.secondary[500] */}
+      {t("CompreDescript")}
+    </Typography>
+  );
+};
+const TwoMin = () => {
+  const { t } = useTranslation("page");
+  return <Typography sx={{ textAlign: "center" }}>{t("TwoMin")}</Typography>;
+};
+const EightMin = () => {
+  const { t } = useTranslation("page");
+  return <Typography sx={{ textAlign: "center" }}>{t("EightMin")}</Typography>;
+};
+const Selected = () => {
+  const { t } = useTranslation("page");
+  return <DefaultButton buttonName={t("Selected")} />;
+};
+// const WayText = () => {
+//   const { t } = useTranslation("main");
+//   return (
+//     <div className="content-button-wrap">
+//       <button className="content-button">{t("writeCtsBtn")}</button>
+//       <button className="content-button">{t("listCtsBtn")}</button>
+//     </div>
+//   );
+// };
 function MarginBar() {
   return (
     <Box
@@ -42,7 +99,6 @@ const Accordion = styled((props) => (
 
 const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(
   ({ theme }) => ({
-
     flexDirection: "row-reverse",
 
     "& .MuiAccordionSummary-expandIconWrapper": {
@@ -70,6 +126,11 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 export default function CustomizedAccordions() {
+  // const { t }  = useTranslation(['page'])
+
+  // const onChangeLang = () => {
+  //     i18n.changeLanguage('ko')
+  // }
   const theme = useTheme();
   const [expanded, setExpanded] = React.useState("panel1");
   const handleChange = (panel1) => (event, newExpanded) => {
@@ -103,6 +164,7 @@ export default function CustomizedAccordions() {
           >
             <ArrowBack />
           </IconButton>
+          <TranslateButton />
         </FlexBetween>
       </Box>
       {/* Quick Accordion */}
@@ -120,14 +182,11 @@ export default function CustomizedAccordions() {
           aria-controls="panel1d-content"
           id="panel1d-header"
         >
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Quick
-          </Typography>
+          {/* Quick */}
+          <QuickTitle />
           <MarginBar />
-          <Typography sx={{ textAlign: "center" }}>2 min</Typography>
+          {/* 2 min */}
+          <TwoMin />
           <Box
             sx={{
               position: "absolute",
@@ -163,29 +222,21 @@ export default function CustomizedAccordions() {
             <img className="thumbnail" src={QuickImage} alt="QuickImage"></img>
           </Box>
           <MarginBar />
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", fontWeight: "bold" }}
-          >
-            Quick
-          </Typography>
+          {/* Quick */}
+          <QuickTitle />
           <MarginBar />
-          <Typography sx={{ textAlign: "center" }}>2 min</Typography>
+          {/* 2 min  */}
+          <TwoMin />
           <MarginBar />
-          <Typography sx={{ color: theme.palette.secondary[500] }}>
-            Uses extimates for income, saving and expenses. You can always add
-            and update your information later.
-          </Typography>
+
+          {/* Uses extimates for income, saving and expenses. You can always add
+            and update your information later. */}
+          <QuickDescript />
+
           <MarginBar />
           <Link to="/goal/first">
-            <DefaultButton
-              buttonName={"Selected"}
-              sx={{
-                "& .MuiButtonBase-root .MuiButton-root": {
-                  minWidth: "100%",
-                },
-              }}
-            />
+            {/* Selected Button */}
+            <Selected />
           </Link>
           <MarginBar />
         </AccordionDetails>
@@ -221,19 +272,17 @@ export default function CustomizedAccordions() {
               alt="ArrowUpIcon"
             />
           </Box>
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", fontWeight: "bold", mb: "12px" }}
-          >
-            Comprehensive
-          </Typography>
 
-          <Typography sx={{ textAlign: "center" }}>8 min</Typography>
+          {/* Comprehensive */}
+          <CompreTitle />
+
+          {/* 8 min */}
+          <EightMin />
         </AccordionSummary>
 
         <AccordionDetails
           sx={{
-            height: "50vh",
+            height: "50vh + 100px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -251,26 +300,31 @@ export default function CustomizedAccordions() {
               src={CompreImage}
               alt="CompreImage"
             ></img>
-          </Box>{" "}
+          </Box>
           <MarginBar />
           <Typography
             variant="h4"
             sx={{ textAlign: "center", fontWeight: "bold" }}
           >
-            Quick
+            {/* Comprehensive */}
+            <CompreTitle />
           </Typography>
           <MarginBar />
-          <Typography sx={{ textAlign: "center" }}>2 min</Typography>
+          <Typography sx={{ textAlign: "center" }}>
+            {/* 8 min */}
+            <EightMin />
+          </Typography>
           <MarginBar />
           <Typography sx={{ color: theme.palette.secondary[500] }}>
-            Uses extimates for income, saving and expenses. You can always add
-            and update your information later.
+            {/* You can still estimate, but this allows you to input more information about your financesso your plan will  be more accurate once you're done. */}
+            <CompreDescript />
           </Typography>
           <MarginBar />
           <Link to="/goal/first">
-            <DefaultButton buttonName={"Selected"} />
+            {/* Selected Button */}
+            <Selected />
           </Link>
-          <MarginBar />{" "}
+          <MarginBar />
         </AccordionDetails>
       </Accordion>
     </Box>

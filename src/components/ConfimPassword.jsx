@@ -8,7 +8,7 @@ import VisibilityEyeOff from "../assets/icon_eye_selected.svg";
 import IconButton from "@mui/material/IconButton";
 import { useTheme } from "@emotion/react";
 import KeyImage from "../assets/icon_key.svg";
-
+import { useTranslation } from "react-i18next";
 function MarginBar() {
   return (
     <Box
@@ -27,6 +27,47 @@ export default function ConfirmPassword() {
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
+  const ConfirmPasswordBox = () => {
+    const { t } = useTranslation("page");
+    return (
+      <FormControl variant="standard">
+        <Input
+          id="standard-adornment-password"
+          type={showPassword ? "text" : "password"}
+          placeholder={t("ConfirmPassword")}
+          startAdornment={
+            <InputAdornment position="start">
+              <img className="thumbnail" src={KeyImage} alt="KeyImage"></img>
+            </InputAdornment>
+          }
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+              >
+                {showPassword ? (
+                  <img
+                    className="thumbnail"
+                    src={VisibilityEyeOff}
+                    alt="VisibilityEyeOff"
+                  ></img>
+                ) : (
+                  <img
+                    className="thumbnail"
+                    src={VisibilityEye}
+                    alt="VisibilityEye"
+                  ></img>
+                )}
+              </IconButton>
+            </InputAdornment>
+          }
+        />
+      </FormControl>
+    );
+  };
+
   return (
     <Box
       m={"0"}
@@ -59,41 +100,8 @@ export default function ConfirmPassword() {
       autoComplete="off"
     >
       <MarginBar />
-      <FormControl variant="standard">
-        <Input
-          id="standard-adornment-password"
-          type={showPassword ? "text" : "password"}
-          placeholder="Confirm Password"
-          startAdornment={
-            <InputAdornment position="start">
-              <img className="thumbnail" src={KeyImage} alt="KeyImage"></img>
-            </InputAdornment>
-          }
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-              >
-                {showPassword ? (
-                  <img
-                    className="thumbnail"
-                    src={VisibilityEyeOff}
-                    alt="VisibilityEyeOff"
-                  ></img>
-                ) : (
-                  <img
-                    className="thumbnail"
-                    src={VisibilityEye}
-                    alt="VisibilityEye"
-                  ></img>
-                )}
-              </IconButton>
-            </InputAdornment>
-          }
-        />
-      </FormControl>
+      {/* ConfirmPasswordBox */}
+      <ConfirmPasswordBox />
     </Box>
   );
 }

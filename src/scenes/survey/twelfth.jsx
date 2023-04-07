@@ -58,7 +58,7 @@ function SurveyTwelfth() {
         "&": {
           backgroundColor: theme.palette.secondary[900],
         },
-  
+
         // "& .MuiTextField-root": {
         //   width: "25ch",
         //   color: theme.palette.primary[1000],
@@ -190,9 +190,10 @@ function SurveyTwelfth() {
       </Box>
       <Box
         mt="3.2rem"
+    
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
@@ -206,7 +207,6 @@ function SurveyTwelfth() {
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup
-           
             aria-labelledby="demo-radio-buttons-group-label"
             // defaultValue="female"
             name="radio-buttons-group"
@@ -228,7 +228,6 @@ function SurveyTwelfth() {
                   <Box>
                     <Box
                       sx={{
-                       
                         // background: theme.palette.secondary[600],
                         borderBottom: "1px solid #ffff",
                       }}
@@ -286,7 +285,6 @@ function SurveyTwelfth() {
 
             <FormControlLabel
               sx={{
-              
                 display: "flex",
                 justifyContent: "space-between",
                 py: 0.5,

@@ -1,0 +1,18 @@
+<svg data-name="일어 하단차트" xmlns="http://www.w3.org/2000/svg" width="241" height="36" viewBox="0 0 241 36">
+    <g data-name="그룹 28201" transform="translate(-59 -446)">
+        <circle data-name="타원 141" cx="5.5" cy="5.5" r="5.5" transform="translate(59 448)" style="fill:#ff754b"/>
+        <text transform="translate(75 458)" style="font-family:NotoSansJP-Regular,Noto Sans JP;font-size:10px"><tspan x="0" y="0">海外債券</tspan></text>
+    </g>
+    <g data-name="그룹 28202" transform="translate(-59 -446)">
+        <circle data-name="타원 143" cx="5.5" cy="5.5" r="5.5" transform="translate(59 471)" style="fill:#f9e002"/>
+        <text transform="translate(75 479)" style="font-family:AppleSDGothicNeoM00;font-size:10px"><tspan x="0" y="0">ETF</tspan></text>
+    </g>
+    <g data-name="그룹 28203" transform="translate(-59 -446)">
+        <circle data-name="타원 142" cx="5.5" cy="5.5" r="5.5" transform="translate(234 448)" style="fill:#b8dec3"/>
+        <text transform="translate(250 458)" style="font-family:NotoSansJP-Regular,Noto Sans JP;font-size:10px"><tspan x="0" y="0">新興国株式</tspan></text>
+    </g>
+    <g data-name="그룹 28204" transform="translate(-59 -446)">
+        <circle data-name="타원 144" cx="5.5" cy="5.5" r="5.5" transform="translate(234 469)" style="fill:#4bceff"/>
+        <text transform="translate(250 479)" style="font-family:NotoSansJP-Regular,Noto Sans JP;font-size:10px"><tspan x="0" y="0">国内株式</tspan></text>
+    </g>
+</svg>

@@ -16,23 +16,65 @@ import IntroImgFirst from "../../assets/img_illustration_introduction_first.svg"
 import IntroImgSecond from "../../assets/img_illustration_introduction_second.svg";
 import IntroImgThird from "../../assets/img_illustration_introduction_third.svg";
 // import { autoPlay } from "react-swipeable-views-utils";
+import { useTranslation } from "react-i18next";
+const IntroduceFirst = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("IntroduceFirst")}</span>;
+};
+const IntroduceSecond = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("IntroduceSecond")}</span>;
+};
+const IntroduceThird = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("IntroduceThird")}</span>;
+};
+const StartButton = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Button
+      sx={{
+        borderRadius: "0px",
+        color: "#fff",
+        py: 1.4,
+        boxSizing: "border-box",
+        width: "122px",
+        fontWeight: "bold",
+        fontSize: "16px",
+        backgroundColor: "#000",
+        textTransform: "capitalize",
+      }}
+    >
+      {t("Start")}
+    </Button>
+  );
+};
 
 const AutoPlaySwipeableViews = SwipeableViews;
 
 const images = [
   {
-    toplabel: "How excition will you",
-    midlabel: "retirement adventures be?",
+    label: <IntroduceFirst />,
   },
   {
-    toplabel: "At the end of the day,",
-    midlabel: "we want a place to call our own.",
+    label: <IntroduceSecond />,
   },
   {
-    toplabel: "At the end of the day,",
-    midlabel: "we want a place to call our own",
-    btmlabel: "Let's turn dreams into reality.",
+    label: <IntroduceThird />,
   },
+  // {
+  //   toplabel: "How excition will you",
+  //   midlabel: "retirement adventures be?",
+  // },
+  // {
+  //   toplabel: "At the end of the day,",
+  //   midlabel: "we want a place to call our own.",
+  // },
+  // {
+  //   toplabel: "At the end of the day,",
+  //   midlabel: "we want a place to call our own",
+  //   btmlabel: "Let's turn dreams into reality.",
+  // },
 ];
 // function MarginBar() {
 //   return (
@@ -47,6 +89,21 @@ function Introduce() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
+  const Skip = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography
+        sx={{
+          display: activeStep === 2 ? "none" : "block",
+          textDecoration: "underline",
+          color: theme.palette.secondary[0],
+          fontSize: "12px",
+        }}
+      >
+        {t("Skip")}
+      </Typography>
+    );
+  };
 
   // const handleNext = () => {
   //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -78,7 +135,7 @@ function Introduce() {
         <FlexBetween>
           <IconButton
             component={Link}
-            to="/"
+            to="/dashboard"
             sx={{
               color:
                 theme === "dark"
@@ -97,20 +154,11 @@ function Introduce() {
                   ? theme.palette.primary[1000]
                   : theme.palette.primary[0],
               textTransform: "capitalize",
-             
             }}
             to="/way"
           >
-            <Typography
-              sx={{
-                display: activeStep === 2 ? "none" : "block",
-                textDecoration: "underline",
-                color: theme.palette.secondary[0],
-                fontSize: "12px",
-              }}
-            >
-              Skip
-            </Typography>
+            {/* SkipButton */}
+            <Skip />
           </Link>
         </FlexBetween>
       </Box>
@@ -119,7 +167,12 @@ function Introduce() {
           display: "flex",
           justifyContent: "space-around",
           flexDirection: "column",
+          pt: 5,
+          boxSizing: "border-box",
           height: "100vh",
+          "& .MuiTypography-root": {
+            lineHeight: 1.6,
+          },
         }}
       >
         <Box
@@ -128,6 +181,7 @@ function Introduce() {
           }}
         >
           <AutoPlaySwipeableViews
+            style={{ overflow: "clip" }}
             axis={theme.direction === "rtl" ? "x-reverse" : "x"}
             index={activeStep}
             onChangeIndex={handleStepChange}
@@ -136,57 +190,57 @@ function Introduce() {
             {images.map((step, index) => (
               <div key={step.label}>
                 {Math.abs(activeStep - index) <= 2 ? (
-                  <Box
-                    component="img"
-                    sx={{
-                      height: "220px",
-                      display: "block",
-                      // maxWidth: 400,
-                      overflow: "hidden",
-                      width: "100%",
-                      mb: 5,
-                    }}
-                    src={
-                      index === 0
-                        ? IntroImgFirst
-                        : index === 1
-                        ? IntroImgSecond
-                        : IntroImgThird
-                    }
-                    // alt={step.label}
-                  />
+                  <Box sx={{ overflow: "clip" }}>
+                    <Box
+                      component="img"
+                      sx={{
+                        height: "220px",
+                        display: "block",
+                        // maxWidth: 400,
+                        overflow: "hidden",
+                        width: "100%",
+                        mb: 8,
+                      }}
+                      src={
+                        index === 0
+                          ? IntroImgFirst
+                          : index === 1
+                          ? IntroImgSecond
+                          : IntroImgThird
+                      }
+                      // alt={step.label}
+                    />
+                    <Box
+                      sx={{
+                        textAlign: "center",
+                        padding: "0 20px",
+                        boxSizing: "border-box",
+                      }}
+                      onChangeIndex={handleStepChange}
+                    >
+                      <Typography variant="h4">
+                        {activeStep === 0
+                          ? images[0].label
+                          : activeStep === 1
+                          ? images[1].label
+                          : images[2].label}
+                      </Typography>
+                    </Box>
+                  </Box>
                 ) : null}
               </div>
             ))}
           </AutoPlaySwipeableViews>
           {/* Intro Text  */}
-
-          <Box sx={{ textAlign: "center" }} onChangeIndex={handleStepChange}>
-            <Typography variant="h4">
-              {activeStep === 0
-                ? images[0].toplabel
-                : activeStep === 1
-                ? images[1].toplabel
-                : images[2].toplabel}
-            </Typography>
-            <Typography variant="h4" sx={{ mt: "12px" }}>
-              {activeStep === 0
-                ? images[0].midlabel
-                : activeStep === 1
-                ? images[1].midlabel
-                : images[2].midlabel}
-            </Typography>
-            <Typography variant="h4" sx={{ mt: "12px" }}>
-              {activeStep === 2 ? images[2].btmlabel : null}
-            </Typography>
-          </Box>
         </Box>
         {/* Intro Bottom Buttons  */}
 
         <Box
           sx={{
+            width: "100%",
             ".start_link": {
               position: "absolute",
+              bottom: "28px",
               right: "16px",
               display: activeStep !== 2 ? "none" : "block",
             },
@@ -243,21 +297,8 @@ function Introduce() {
           />
 
           <Link to="/way" className="start_link">
-            <Button
-              sx={{
-                borderRadius: "0px",
-                color: "#fff",
-                py: 1.4,
-                boxSizing: "border-box",
-                width: "122px",
-                fontWeight: "bold",
-                fontSize: "16px",
-                backgroundColor: "#000",
-                textTransform: "capitalize",
-              }}
-            >
-              Start
-            </Button>
+            {/* StartButton */}
+            <StartButton />
           </Link>
         </Box>
       </Box>

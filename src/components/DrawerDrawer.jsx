@@ -12,9 +12,12 @@ import ConfirmIcon from "../assets/img_confirm.svg";
 // import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+
 // import { textAlign } from "@mui/system";
 
-const drawerBleeding = 64;
+const drawerBleeding = 63;
 
 const Root = styled("div")(({ theme }) => ({
   height: "100%",
@@ -48,7 +51,65 @@ function SwipeableEdgeDrawer(props) {
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
-
+  const SavePlanButton = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Button
+        onClick={toggleDrawer(true)}
+        sx={{
+          borderRadius: "0px",
+          color: "#fff",
+          py: 1,
+          boxSizing: "border-box",
+          width: "100%",
+          fontWeight: "bold",
+          fontSize: "16px",
+          backgroundColor: "#000",
+          textTransform: "capitalize",
+        }}
+      >
+        {t("SavePlan")}
+      </Button>
+    );
+  };
+  const SavePlanCompleteTitle = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+        {t("SaveYourPlanTitle")}
+      </Typography>
+    );
+  };
+  const SavePlanCompleteDescript = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography sx={{ lineHeight: "1.8", color: "#808080" , px: "20px"}}>
+        {t("SaveYourPlanDescript")}
+      </Typography>
+    );
+  };
+  const YourLifePlanButton = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Button
+        component={Link}
+        to="/mypage"
+        sx={{
+          borderRadius: "0px",
+          color: "#fff",
+          py: 1,
+          boxSizing: "border-box",
+          width: "100%",
+          fontWeight: "bold",
+          fontSize: "16px",
+          backgroundColor: "#000",
+          textTransform: "capitalize",
+        }}
+      >
+        {t("YourLifePlan")}
+      </Button>
+    );
+  };
   // This is used only for the example
   const container =
     window !== undefined ? () => window().document.body : undefined;
@@ -72,22 +133,8 @@ function SwipeableEdgeDrawer(props) {
           textAlign: "center",
         }}
       >
-        <Button
-          onClick={toggleDrawer(true)}
-          sx={{
-            borderRadius: "0px",
-            color: "#fff",
-            py: 1,
-            boxSizing: "border-box",
-            width: "100%",
-            fontWeight: "bold",
-            fontSize: "16px",
-            backgroundColor: "#000",
-            textTransform: "capitalize",
-          }}
-        >
-          Save Plan
-        </Button>
+        {/* SavePlan */}
+        <SavePlanButton />
       </Box>
       <SwipeableDrawer
         container={container}
@@ -119,7 +166,7 @@ function SwipeableEdgeDrawer(props) {
           sx={{
             mb: 3,
             width: "100%",
-            height: "230px",
+            height: "320px",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
@@ -130,13 +177,21 @@ function SwipeableEdgeDrawer(props) {
           <Icon sx={{ width: "87px", height: "87px" }}>
             <img src={ConfirmIcon} alt={ConfirmIcon} />
           </Icon>
-          <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-            Save Your Plan Completely
-          </Typography>
-          <Typography sx={{ lineHeight: "1.8", color: "#808080" }}>
-            If you want to access your previous plans <br /> you have set up,
-            please go tp Your Lifte Goals.
-          </Typography>
+          {/* Save Your Plan Completely */}
+          <SavePlanCompleteTitle />
+          {/* Save Your Plan Completely Descript */}
+          <SavePlanCompleteDescript />
+          <Box
+            p="30px"
+            width={"100%"}
+            boxSizing={"border-box"}
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            {/* Your Life Plan */}
+            <YourLifePlanButton />
+          </Box>
         </Box>
       </SwipeableDrawer>
     </Root>

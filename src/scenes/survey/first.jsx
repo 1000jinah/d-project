@@ -25,6 +25,13 @@ import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
+import { useTranslation } from "react-i18next";
+const SurveyFirstHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Header title={t("SurveyFirstTitle")} subtitle={t("SurveyFirstDescipt")} />
+  );
+};
 
 function MarginBar() {
   return (
@@ -47,6 +54,32 @@ function StepSpaceBar() {
 function SurveyFirst() {
   const theme = useTheme();
   //   const [message, setMessage] = useState("");
+  const Skip = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography
+        sx={{
+          textDecoration: "underline",
+          color: theme.palette.secondary[0],
+          fontSize: "12px",
+        }}
+      >
+        {t("Skip")}
+      </Typography>
+    );
+  };
+  const Continue = () => {
+    const { t } = useTranslation("page");
+    return (
+      <DefaultButton
+        buttonName={t("Continue")}
+        sx={{
+          p: "20px",
+          backgroundColor: theme.palette.secondary[100],
+        }}
+      />
+    );
+  };
 
   return (
     <Box
@@ -121,7 +154,12 @@ function SurveyFirst() {
               }}
             >
               <Box
-                sx={{ width: "20%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  height: "100%",
+                  background: "#ff754b",
+                  width:
+                    localStorage.getItem("language") === "jp" ? "100%" : "20%",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
@@ -176,33 +214,23 @@ function SurveyFirst() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
-            <Typography
-              sx={{
-                textDecoration: "underline",
-                color: theme.palette.secondary[0],
-                fontSize: "12px",
-              }}
-            >
-              Skip
-            </Typography>
+            {/* Skip */}
+            <Skip />
           </Link>
         </FlexBetween>
       </Box>
       <Box
         mt="3.2rem"
+        mb="3rem"
         p="1.2rem 1.6rem"
-        height="100%"
-        minHeight="667px"
+        // height="100%"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
-        <Header
-          title={"Income Needs"}
-          subtitle={
-            "Your current for income from your portfolio is an important factor in designing your portfolio. How much will you need to withdraw from your portfolio each year?"
-          }
-        />
+        {/* Header */}
+        <SurveyFirstHeader />
         <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />
         </Box>
@@ -302,13 +330,8 @@ function SurveyFirst() {
           }}
         >
           <Link to={"/survey/second"} sx={{}}>
-            <DefaultButton
-              buttonName={"Continue"}
-              sx={{
-                p: "20px",
-                backgroundColor: theme.palette.secondary[100],
-              }}
-            />
+            {/* Continue */}
+            <Continue />
           </Link>
         </Box>
       </Box>

@@ -7,9 +7,6 @@ import { themeSettings } from "theme";
 // import Layout from "scenes/layout";
 import Dashboard from "scenes/dashboard";
 import Introduce from "scenes/introduce";
-// import IntroduceFirst from "scenes/introduce/first";
-// import IntroduceSecond from "scenes/introduce/second";
-// import IntroduceThird from "scenes/introduce/third";
 import Way from "scenes/way";
 import GoalFirst from "scenes/goal/first";
 import GoalSecond from "scenes/goal/second";
@@ -31,6 +28,10 @@ import SurveyTwelfth from "scenes/survey/twelfth";
 import Projection from "scenes/projection/default";
 import ProjectionResult from "scenes/projection/result";
 import MyPage from "scenes/mypage";
+// import TranslateButton from "components/Translate";
+// import "./locales";
+// import { useTranslation } from "react-i18next";
+
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
@@ -40,9 +41,8 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route>
-              {/* <Route element={<Layout />}> */}
-              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            {/* <Route element={<Layout />}> */}
+              <Route path="/" element={<Navigate to="/way" replace />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/introduce" element={<Introduce />} />
               {/* <Route path="/introduce/first" element={<IntroduceFirst />} />
@@ -66,16 +66,14 @@ function App() {
               <Route path="/survey/tenth" element={<SurveyTenth />} />
               <Route path="/survey/eleventh" element={<SurveyEleventh />} />
               <Route path="/survey/twelfth" element={<SurveyTwelfth />} />
+              <Route path="/projection/default" element={<Projection />} />
               <Route
-                path="/projection/default"
-                element={<Projection />}
-              />
-               <Route
-                path="/projection/result"
+                path="/projection/result/:profilename"
                 element={<ProjectionResult />}
               />
               <Route path="/mypage" element={<MyPage />} />
-            </Route>
+            {/* </Route> */}
+            {/* <Route element={<TranslateButton />}/> */}
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

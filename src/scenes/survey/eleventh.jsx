@@ -29,15 +29,15 @@ import DoNothingIcon from "../../assets/img_donothing.svg";
 import BuyMoreIcon from "../../assets/img_buymore.svg";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 
-function MarginBar() {
-  return (
-    <Box
-      sx={{
-        height: 35,
-      }}
-    />
-  );
-}
+// function MarginBar() {
+//   return (
+//     <Box
+//       sx={{
+//         height: 35,
+//       }}
+//     />
+//   );
+// }
 function StepSpaceBar() {
   return (
     <Box
@@ -189,11 +189,11 @@ function SurveyEleventh() {
         mt="3.2rem"
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Small Company Investing"}
+          title={"Choose the investment portfolio you want"}
           subtitle={
             "Imagine your investment of $1,000 becomes $750 over 3 months, but it's proven historically that it will recover in 3-5 years."
           }
@@ -202,7 +202,7 @@ function SurveyEleventh() {
         {/* <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />
         </Box> */}
-        <MarginBar />
+        {/* <MarginBar /> */}
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="259" height="34" viewBox="0 0 259 34">
+    <g data-name="그룹 29727" transform="translate(-67 -463)">
+        <circle data-name="타원 141" cx="5.5" cy="5.5" r="5.5" transform="translate(67 463)" style="fill:#ff754b"/>
+        <circle data-name="타원 142" cx="5.5" cy="5.5" r="5.5" transform="translate(242 463)" style="fill:#b8dec3"/>
+        <text data-name="Govt Bonds, Developed Markets" transform="translate(83 472)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="0" y="0">Govt Bonds, Developed Markets</tspan></text>
+        <text data-name="Coporate Bonds" transform="translate(258 472)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="0" y="0">Coporate Bonds</tspan></text>
+    </g>
+    <g data-name="그룹 29728" transform="translate(-67 -463)">
+        <circle data-name="타원 143" cx="5.5" cy="5.5" r="5.5" transform="translate(67 485)" style="fill:#f9e002"/>
+        <circle data-name="타원 144" cx="5.5" cy="5.5" r="5.5" transform="translate(242 485)" style="fill:#4bceff"/>
+        <text data-name="Developed Stocks" transform="translate(83 494)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="0" y="0">Developed Stocks</tspan></text>
+        <text transform="translate(258 494)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="0" y="0">ETC</tspan></text>
+    </g>
+</svg>

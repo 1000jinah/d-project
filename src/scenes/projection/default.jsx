@@ -22,14 +22,71 @@ import FlexBetween from "components/FlexBetween";
 // import Header from "components/Header";
 import BarChart from "../../components/BarChart";
 import PieChart from "../../components/PieChart";
-import OutcomeChart from "../../components/OutcomeChart";
+// import OutcomeChart from "../../components/OutcomeChart";
 // import SwipeableEdgeDrawer from "components/DrawerChart";
 import { Link } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-
+import ProjectionChartImage from "../../assets/img_projectionprofile_chart.svg";
+import AssetAllocationLabelImage from "../../assets/img_assetallocation_label.svg";
+import AssetAllocationLabelJapanImage from "../../assets/img_assetallocation_label_jp.svg";
 // import InfoMountainIcon from "../../assets/icon_mountain_information.svg";
 import ProjectionSliders from "components/Sliders";
 import SwipeableEdgeDrawer from "components/DrawerDrawer";
+// import { display, width } from "@mui/system";
+import { useTranslation } from "react-i18next";
+const EnMoney = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("EnMoney")}</span>;
+};
+const JpMoney = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("JpMoney")}</span>;
+};
+const ProjectionHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Box>
+      <Typography sx={{ mb: "10px", textIndent: "10px" }}>
+        {t("ExpectedOutcome")}
+      </Typography>
+      <Box sx={{ display: "flex", alignItems: "baseline" }}>
+        <Typography
+          variant="h1"
+          sx={{
+            textIndent: "8px",
+            fontWeight: "bold",
+            letterSpacing: "-1px",
+            mr: 1,
+          }}
+        >
+          {localStorage.getItem("language") === "en" ? <EnMoney /> : null}
+          {localStorage.getItem("language") === "jp" ? "169,769" : "9,667"}
+        </Typography>
+        <Typography variant="h4">
+          {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
+        </Typography>
+      </Box>
+
+      {/* <Box>
+                <Typography sx={{ mb: "10px", textIndent: "10px" }}>
+                  Expected Outcome
+                </Typography>
+
+                <Typography
+                  variant="h1"
+                  sx={{
+                    textIndent: "10px",
+                    fontWeight: "bold",
+                    letterSpacing: "-1px",
+                  }}
+                >
+                  $ 169,769
+                </Typography>
+              </Box> */}
+    </Box>
+  );
+};
+
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
 }));
@@ -54,6 +111,131 @@ function MarginBar() {
 // }
 function Projection() {
   const theme = useTheme();
+
+  const ProjectionRiskBox = () => {
+    const { t } = useTranslation("page");
+    return (
+      <FlexBetween sx={{ backgroundColor: "#000", p: "1rem" }}>
+        {/* Risk Score */}
+        <Box width={"100%"}>
+          <Typography
+            variant="h4"
+            pb={1}
+            mb={0.5}
+            borderBottom={"1px solid"}
+            borderBottomColor={theme.palette.secondary[200]}
+            color={theme.palette.secondary[900]}
+          >
+            5
+          </Typography>
+          <Typography fontSize={"10px"} color={theme.palette.secondary[200]}>
+            {localStorage.getItem("language") === "jp"
+              ? "リスク許容度"
+              : "Risk Score"}
+          </Typography>
+        </Box>
+        {/* Edit score retake test */}
+        <Box width={"100%"} mx={1}>
+          <Typography
+            variant="h4"
+            borderBottom={"1px solid"}
+            pb={1}
+            mb={0.5}
+            borderBottomColor={theme.palette.secondary[200]}
+            color={theme.palette.secondary[900]}
+          >
+            5
+          </Typography>
+          <Typography fontSize={"10px"} color={theme.palette.secondary[200]}>
+            {localStorage.getItem("language") === "jp"
+              ? "現在のリスク許容度"
+              : "Edit score retake test"}
+          </Typography>
+        </Box>
+        {/* Expected Return */}
+        <Box width={"100%"}>
+          <Typography
+            variant="h4"
+            pb={1}
+            mb={0.5}
+            borderBottom={"1px solid"}
+            borderBottomColor={theme.palette.secondary[200]}
+            color={theme.palette.secondary[900]}
+          >
+            9.8%
+          </Typography>
+          <Typography fontSize={"10px"} color={theme.palette.secondary[200]}>
+            {localStorage.getItem("language") === "jp"
+              ? "期待リターン"
+              : "Expected Return"}
+          </Typography>
+        </Box>
+      </FlexBetween>
+    );
+  };
+  const ProjectionSilderkBox = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box my={1} backgroundColor={"#fff"}>
+        <Box m={2}>
+          {/* Retirement Age */}
+          <ProjectionSliders
+            defaultValue
+            SliderTitle={
+              localStorage.getItem("language") === "jp"
+                ? "退職する予定年齢"
+                : "Retirement Age"
+            }
+            SliderType={
+              localStorage.getItem("language") === "jp" ? "歳" : "Age"
+            }
+          />
+        </Box>
+        <Box m={2}>
+          {/* Starting Balance */}
+          <ProjectionSliders
+            SliderTitle={
+              localStorage.getItem("language") === "jp"
+                ? "退職後の収入"
+                : "Starting Balance"
+            }
+            SliderType={
+              localStorage.getItem("language") === "jp" ? "万円" : "$"
+            }
+          />
+        </Box>
+        <Box m={2}>
+          {/* Monthly Deposit */}
+          <ProjectionSliders
+            defaultValue
+            SliderTitle={
+              localStorage.getItem("language") === "jp"
+                ? "初期投資金額"
+                : "Monthly Deposit"
+            }
+            SliderType={
+              localStorage.getItem("language") === "jp" ? "万円" : "$"
+            }
+          />
+        </Box>
+        <Box m={2}>
+          {/* Investment Period */}
+          <ProjectionSliders
+            defaultValue
+            SliderTitle={
+              localStorage.getItem("language") === "jp"
+                ? "毎月積立額"
+                : "Investment Period"
+            }
+            SliderType={
+              localStorage.getItem("language") === "jp" ? "年" : "Years"
+            }
+          />
+        </Box>
+      </Box>
+    );
+  };
+
   //   const [message, setMessage] = useState("");
   const [value, setValue] = React.useState("1");
 
@@ -120,7 +302,7 @@ function Projection() {
         <FlexBetween sx={{}}>
           <IconButton
             component={Link}
-            to="/survey/eleventh"
+            to="/survey/first"
             sx={{
               color:
                 theme === "dark"
@@ -139,36 +321,17 @@ function Projection() {
             }}
           >
             {value === "1"
-              ? "Projection Profile"
+              ? localStorage.getItem("language") === "jp"
+                ? "プロファイルの結果"
+                : "Projection Profile"
               : value === "2"
-              ? "Asset Allocation"
+              ? localStorage.getItem("language") === "jp"
+                ? "プロファイルの結果"
+                : "Asset Allocation"
+              : localStorage.getItem("language") === "jp"
+              ? "プロファイルの結果"
               : "Holding Details"}
           </Typography>
-
-          {/* Skip  */}
-          {/* <Link
-            variant="text"
-            sx={{
-              color:
-                theme === "dark"
-                  ? theme.palette.primary[1000]
-                  : theme.palette.primary[0],
-              textTransform: "capitalize",
-              
-            }}
-            to="/way"
-          >
-            <Typography
-              sx={{
-                visibility: "hidden",
-                textDecoration: "underline",
-                color: theme.palette.secondary[0],
-                fontSize: "12px",
-              }}
-            >
-              Skip
-            </Typography>
-          </Link> */}
         </FlexBetween>
       </Box>
       <Box
@@ -177,7 +340,12 @@ function Projection() {
         p="0.8rem"
         height="100%"
         minHeight="667px"
-        sx={{ background: theme.palette.secondary[900] }}
+        sx={{
+          background: theme.palette.secondary[900],
+          "& .MuiTabs-flexContainer": {
+            justifyContent: "space-between",
+          },
+        }}
       >
         <Box sx={{ width: "100%" }}>
           <TabContext value={value}>
@@ -193,52 +361,58 @@ function Projection() {
                 }
               >
                 <Tab
-                  sx={{ fontSize: "9px", p: " 0.45rem 0.5rem" }}
-                  label="Projection Profile"
+                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  label={
+                    localStorage.getItem("language") === "jp"
+                      ? "将来の予想"
+                      : "Projection Profile"
+                  }
                   value="1"
                 />
                 <Tab
-                  sx={{ fontSize: "9px", p: " 0.45rem 0.5rem" }}
-                  label="Asset Allocation"
+                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  label={
+                    localStorage.getItem("language") === "jp"
+                      ? "ポートフォリオ"
+                      : "Asset Allocation"
+                  }
                   value="2"
                 />
                 <Tab
-                  sx={{ fontSize: "9px", p: " 0.45rem 0.5rem" }}
-                  label="Holding Details"
+                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  label={
+                    localStorage.getItem("language") === "jp"
+                      ? "投資商品"
+                      : "Holding Details"
+                  }
                   value="3"
                 />
               </TabList>
             </Box>
             <TabPanel value="1" sx={{ p: "0", m: " 0" }}>
               <MarginBar />
-              <Box>
-                <Typography sx={{ mb: "10px", textIndent: "10px" }}>
-                  Expected Outcome
-                </Typography>
-
-                <Typography
-                  variant="h1"
-                  sx={{
-                    textIndent: "10px",
-                    fontWeight: "bold",
-                    letterSpacing: "-1px",
-                  }}
-                >
-                  $ 169,769
-                </Typography>
-              </Box>
+              {/* ProjectionHeader */}
+              <ProjectionHeader />
               <MarginBar />
-              <Box>
+              <Box mb="0.8rem">
                 <StyledBox>
                   <Box>
                     {/* <Header title="Bar Chart" subtitle="Simple Bar Chart" /> */}
-                    <Box sx={{ height: "350px" }}>
-                      <OutcomeChart />
-                      <Box sx={{ mt: "-45px" }}>
-                        {/* <FlexBetween>
+                    <Box sx={{ m: "0.8rem", py: "0.8rem" }}>
+                      {/* <OutcomeChart /> */}
+                      <img
+                        width="100%"
+                        src={ProjectionChartImage}
+                        alt={ProjectionChartImage}
+                      />
+                      <Box>
+                        <FlexBetween>
                           <Typography fontWeight={"bold"}>2020</Typography>
+                          <Typography fontWeight={"bold"}>2030</Typography>
+                          <Typography fontWeight={"bold"}>2040</Typography>
+                          <Typography fontWeight={"bold"}>2050</Typography>
                           <Typography fontWeight={"bold"}>2060</Typography>
-                        </FlexBetween> */}
+                        </FlexBetween>
                       </Box>
                     </Box>
                   </Box>
@@ -246,125 +420,42 @@ function Projection() {
                   {/* <Skeleton variant="rectangular" height="100%" /> */}
                 </StyledBox>
               </Box>
-              <FlexBetween sx={{ backgroundColor: "#000", p: "1rem" }}>
-                {/* Risk Score */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Risk Score
-                  </Typography>
-                </Box>
-                {/* Edit score retake test */}
-                <Box width={"100%"} mx={1}>
-                  <Typography
-                    variant="h4"
-                    borderBottom={"1px solid"}
-                    pb={1}
-                    mb={0.5}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Edit score retake test
-                  </Typography>
-                </Box>
-                {/* Expected Return */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    9.8%
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Expected Return
-                  </Typography>
-                </Box>
-              </FlexBetween>
-              <Box my={1} backgroundColor={"#fff"}>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Retirement Age"}
-                    SliderType={"Age"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    SliderTitle={"Starting Balance"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Monthly Deposit"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Investment Period"}
-                    SliderType={"Years"}
-                  />
-                </Box>
-              </Box>
+              {/* ProjectionRiskBox */}
+              <ProjectionRiskBox />
+              {/* ProjectionSilderkBox */}
+              <ProjectionSilderkBox />
             </TabPanel>
             <TabPanel value="2" sx={{ p: "0", m: " 0" }}>
               <MarginBar />
-              <Box>
-                <Typography sx={{ mb: "10px", textIndent: "10px" }}>
-                  Expected Outcome
-                </Typography>
-
-                <Typography
-                  variant="h1"
-                  sx={{
-                    textIndent: "10px",
-                    fontWeight: "bold",
-                    letterSpacing: "-1px",
-                  }}
-                >
-                  $ 169,769
-                </Typography>
-              </Box>
+              {/* ProjectionHeader */}
+              <ProjectionHeader />
               <MarginBar />
-              <Box>
+              <Box mb="0.8rem">
                 <StyledBox>
                   <Box>
                     {/* <Header title="Bar Chart" subtitle="Simple Bar Chart" /> */}
-                    <Box sx={{ height: "350px" }}>
+                    <Box sx={{ height: "275px" }}>
                       <PieChart />
-                      <Box sx={{ mt: "-45px" }}>
-                        {/* <FlexBetween>
-                          <Typography fontWeight={"bold"}>2020</Typography>
-                          <Typography fontWeight={"bold"}>2060</Typography>
-                        </FlexBetween> */}
+                      <Box
+                        sx={{
+                          mt: "-45px",
+                          display: "flex",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <img
+                          textAlign="center"
+                          src={
+                            localStorage.getItem("language") === "en"
+                              ? AssetAllocationLabelImage
+                              : AssetAllocationLabelJapanImage
+                          }
+                          alt={
+                            localStorage.getItem("language") === "en"
+                              ? AssetAllocationLabelImage
+                              : AssetAllocationLabelJapanImage
+                          }
+                        />
                       </Box>
                     </Box>
                   </Box>
@@ -372,116 +463,17 @@ function Projection() {
                   {/* <Skeleton variant="rectangular" height="100%" /> */}
                 </StyledBox>
               </Box>
-              <FlexBetween sx={{ backgroundColor: "#000", p: "1rem" }}>
-                {/* Risk Score */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Risk Score
-                  </Typography>
-                </Box>
-                {/* Edit score retake test */}
-                <Box width={"100%"} mx={1}>
-                  <Typography
-                    variant="h4"
-                    borderBottom={"1px solid"}
-                    pb={1}
-                    mb={0.5}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Edit score retake test
-                  </Typography>
-                </Box>
-                {/* Expected Return */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    9.8%
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Expected Return
-                  </Typography>
-                </Box>
-              </FlexBetween>
-              <Box my={1} backgroundColor={"#fff"}>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Retirement Age"}
-                    SliderType={"Age"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    SliderTitle={"Starting Balance"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Monthly Deposit"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Investment Period"}
-                    SliderType={"Years"}
-                  />
-                </Box>
-              </Box>
+              {/* ProjectionRiskBox */}
+              <ProjectionRiskBox />
+              {/* ProjectionSilderkBox */}
+              <ProjectionSilderkBox />
             </TabPanel>
             <TabPanel value="3" sx={{ p: "0", m: " 0" }}>
-              {" "}
               <MarginBar />
-              <Box>
-                <Typography sx={{ mb: "10px", textIndent: "10px" }}>
-                  Expected Outcome
-                </Typography>
-
-                <Typography
-                  variant="h1"
-                  sx={{
-                    textIndent: "10px",
-                    fontWeight: "bold",
-                    letterSpacing: "-1px",
-                  }}
-                >
-                  $ 169,769
-                </Typography>
-              </Box>
+              {/* ProjectionHeader */}
+              <ProjectionHeader />
               <MarginBar />
-              <Box>
+              <Box mb="0.8rem">
                 <StyledBox>
                   <Box>
                     {/* <Header title="Bar Chart" subtitle="Simple Bar Chart" /> */}
@@ -496,94 +488,10 @@ function Projection() {
                   {/* <Skeleton variant="rectangular" height="100%" /> */}
                 </StyledBox>
               </Box>
-              <FlexBetween sx={{ backgroundColor: "#000", p: "1rem" }}>
-                {/* Risk Score */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Risk Score
-                  </Typography>
-                </Box>
-                {/* Edit score retake test */}
-                <Box width={"100%"} mx={1}>
-                  <Typography
-                    variant="h4"
-                    borderBottom={"1px solid"}
-                    pb={1}
-                    mb={0.5}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    5
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Edit score retake test
-                  </Typography>
-                </Box>
-                {/* Expected Return */}
-                <Box width={"100%"}>
-                  <Typography
-                    variant="h4"
-                    pb={1}
-                    mb={0.5}
-                    borderBottom={"1px solid"}
-                    borderBottomColor={theme.palette.secondary[200]}
-                    color={theme.palette.secondary[900]}
-                  >
-                    9.8%
-                  </Typography>
-                  <Typography
-                    fontSize={"10px"}
-                    color={theme.palette.secondary[200]}
-                  >
-                    Expected Return
-                  </Typography>
-                </Box>
-              </FlexBetween>
-              <Box my={1} backgroundColor={"#fff"}>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Retirement Age"}
-                    SliderType={"Age"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    SliderTitle={"Starting Balance"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Monthly Deposit"}
-                    SliderType={"$"}
-                  />
-                </Box>
-                <Box m={2}>
-                  <ProjectionSliders
-                    defaultValue
-                    SliderTitle={"Investment Period"}
-                    SliderType={"Years"}
-                  />
-                </Box>
-              </Box>
+              {/* ProjectionRiskBox */}
+              <ProjectionRiskBox />
+              {/* ProjectionSilderkBox */}
+              <ProjectionSilderkBox />
             </TabPanel>
           </TabContext>
         </Box>

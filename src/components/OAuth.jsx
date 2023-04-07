@@ -1,9 +1,47 @@
 import React from "react";
 import SocialLoginButtons from "../components/SocialLoginButtons";
 import { Typography, useTheme, Box } from "@mui/material";
-
+import { useTranslation } from "react-i18next";
 const OAuth = () => {
   const theme = useTheme();
+  const OAuthEn = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box>
+        <Typography
+          variant="span"
+          className="hrSection"
+          sx={{
+            "::before, ::after": {
+              background: theme.palette.secondary[500],
+            },
+          }}
+        >
+          {t("Or")} {t("SocialMedia")}
+        </Typography>
+      </Box>
+    );
+  };
+  const OAuthJp = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box>
+        <Typography
+          variant="span"
+          className="hrSection"
+          sx={{
+            mt: 3,
+            "::before, ::after": {
+              background: theme.palette.secondary[500],
+            },
+          }}
+        >
+          {t("Or")}
+        </Typography>
+        <Typography mt={5}>{t("SocialMedia")}</Typography>
+      </Box>
+    );
+  };
 
   return (
     <Box
@@ -16,20 +54,7 @@ const OAuth = () => {
         color: theme.palette.secondary[500],
       }}
     >
-
-      <Box>
-        <Typography
-          variant="span"
-          className="hrSection"
-          sx={{
-            "::before, ::after": {
-              background: theme.palette.secondary[500],
-            },
-          }}
-        >
-          Or via social media
-        </Typography>
-      </Box>
+      {localStorage.getItem("language") === "jp" ? <OAuthJp /> : <OAuthEn />}
       <SocialLoginButtons />
     </Box>
   );

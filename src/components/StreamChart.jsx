@@ -78,7 +78,7 @@ const LineChart = () => {
           translateY: 10,
           itemsSpacing: 0,
           itemDirection: "left-to-right",
-          itemWidth: 125,
+          itemWidth: localStorage.getItem("language") === "jp" ? 100 : 125,
           itemHeight: 20,
           reverse: true,
           itemOpacity: 1,
@@ -89,7 +89,7 @@ const LineChart = () => {
             {
               on: "hover",
               style: {
-                itemBackground: "rgb(0, 0, 0)",
+                // itemBackground: "rgb(0, 0, 0)",
                 itemOpacity: 1,
               },
             },

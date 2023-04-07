@@ -24,7 +24,17 @@ import StepCircleIcon from "../../assets/icon_golfball_orange.svg";
 import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
-
+import BoxesJapanImage from "../../assets/icon_box_jp.svg";
+import { useTranslation } from "react-i18next";
+const SurveySecondHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Header
+      title={t("SurveySecondTitle")}
+      subtitle={t("SurveySecondDescipt")}
+    />
+  );
+};
 function MarginBar() {
   return (
     <Box
@@ -46,6 +56,32 @@ function StepSpaceBar() {
 function Surveysecond() {
   const theme = useTheme();
   //   const [message, setMessage] = useState("");
+  const Skip = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Typography
+        sx={{
+          textDecoration: "underline",
+          color: theme.palette.secondary[0],
+          fontSize: "12px",
+        }}
+      >
+        {t("Skip")}
+      </Typography>
+    );
+  };
+  const Continue = () => {
+    const { t } = useTranslation("page");
+    return (
+      <DefaultButton
+        buttonName={t("Continue")}
+        sx={{
+          p: "20px",
+          backgroundColor: theme.palette.secondary[100],
+        }}
+      />
+    );
+  };
 
   return (
     <Box
@@ -120,13 +156,26 @@ function Surveysecond() {
               }}
             >
               <Box
-                sx={{ width: "60%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  height: "100%",
+                  background: "#ff754b",
+                  width:
+                    localStorage.getItem("language") === "jp" ? "100%" : "55%",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
             <img
-              src={StepEmptyCircleIcon}
-              alt={StepEmptyCircleIcon}
+              src={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
+              alt={
+                localStorage.getItem("language") === "jp"
+                  ? StepCircleIcon
+                  : StepEmptyCircleIcon
+              }
               width={"15px"}
             />
             <StepSpaceBar />
@@ -139,7 +188,12 @@ function Surveysecond() {
               }}
             >
               <Box
-                sx={{ width: "0%", height: "100%", background: "#ff754b" }}
+                sx={{
+                  height: "100%",
+                  background: "#ff754b",
+                  width:
+                    localStorage.getItem("language") === "jp" ? "80%" : "0%",
+                }}
               ></Box>
             </Box>
             <StepSpaceBar />
@@ -175,37 +229,32 @@ function Surveysecond() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
-            <Typography
-              sx={{
-                textDecoration: "underline",
-                color: theme.palette.secondary[0],
-                fontSize: "12px",
-              }}
-            >
-              Skip
-            </Typography>
+            {/* Skip */}
+            <Skip />
           </Link>
         </FlexBetween>
       </Box>
       <Box
         mt="3.2rem"
+        mb={localStorage.getItem("language") === "jp" ? "3rem" : "0"}
         p="1.2rem 1.6rem"
         height="100%"
-        minHeight="667px"
+        // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
-        <Header
-        mb="0"
-          title={"Liquidity / Cash Needs"}
-          subtitle={
-            "Beyound your income needs, will you need to make significant withdrawals from your portfolio within the next five years to fund major expenses(i.e. college funding, vacation home)? If yes, please indicate the estimated amount of withdrawals as a percenttage of your portfolio:"
-          }
-        />
-        {/* <Box sx={{ textAlign: "center" }}>
-          <img src={CoinQueIcon} alt={CoinQueIcon} />
-        </Box> */}
+        {/* Header */}
+        <SurveySecondHeader />
+        <Box
+          sx={{
+            textAlign: "center",
+            display:
+              localStorage.getItem("language") === "jp" ? "block" : "none",
+          }}
+        >
+          <img src={BoxesJapanImage} alt={BoxesJapanImage} />
+        </Box>
         <MarginBar />
         <FormControl sx={{ width: "100%", mb: 3 }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
@@ -226,7 +275,11 @@ function Surveysecond() {
               }}
               value="1"
               control={<Radio />}
-              label="Less than 15%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "30％以上の損失"
+                  : "Less than 15%"
+              }
               labelPlacement="start"
             />
             <FormControlLabel
@@ -241,7 +294,11 @@ function Surveysecond() {
               }}
               value="2"
               control={<Radio />}
-              label="15%-35%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "50％以上のの損失"
+                  : "15%-35%"
+              }
               labelPlacement="start"
             />
             <FormControlLabel
@@ -256,7 +313,11 @@ function Surveysecond() {
               }}
               value="3"
               control={<Radio />}
-              label="35%-50%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "70％以上の損失"
+                  : "35%-50%"
+              }
               labelPlacement="start"
             />
             <FormControlLabel
@@ -271,7 +332,11 @@ function Surveysecond() {
               }}
               value="4"
               control={<Radio />}
-              label="50%-60%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "90％以上の損失"
+                  : "50%-60%"
+              }
               labelPlacement="start"
             />
             <FormControlLabel
@@ -286,7 +351,11 @@ function Surveysecond() {
               }}
               value="5"
               control={<Radio />}
-              label="75%-100%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "100%損失"
+                  : "75%-100%"
+              }
               labelPlacement="start"
             />
           </RadioGroup>
@@ -302,13 +371,8 @@ function Surveysecond() {
           }}
         >
           <Link to={"/survey/third"} sx={{}}>
-            <DefaultButton
-              buttonName={"Continue"}
-              sx={{
-                p: "20px",
-                backgroundColor: theme.palette.secondary[100],
-              }}
-            />
+            {/* Continue */}
+            <Continue />
           </Link>
         </Box>
       </Box>

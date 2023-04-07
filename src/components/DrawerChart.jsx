@@ -15,8 +15,43 @@ import InfoMountainIcon from "../assets/icon_mountain_information.svg";
 // import MyResponsiveStream from "components/Chart";
 import StreamChart from "../components/StreamChart";
 import FlexBetween from "../components/FlexBetween";
-const drawerBleeding = 52;
+import { useTranslation } from "react-i18next";
+const EnMoney = () => {
+  const { t } = useTranslation("page");
+  return <span>{t("EnMoney")}</span>;
+};
+const JpMoney = () => {
+  const { t } = useTranslation("page");
+  return <span sx={{ fontSize: "14px" }}>{t("JpMoney")}</span>;
+};
+const DrawerHeader = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Box sx={{ py: 4, px: 3, color: "#000" }}>
+      <Typography>{t("InvestValue")}</Typography>
+      <Box sx={{ display: "flex", alignItems: "baseline" }}>
+        <Typography variant="h3" sx={{ fontWeight: "bold", mr: 0.5 }}>
+          {localStorage.getItem("language") === "en" ? (
+            <EnMoney variant="h3" />
+          ) : null}
+          {localStorage.getItem("language") === "jp" ? "500,890 " : "5,000"}
+          {/* {localStorage.getItem("language") === "en" ? "" : ""} */}
+        </Typography>
+        {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
+      </Box>
+    </Box>
+  );
+};
+const AboutDrawerDescript = () => {
+  const { t } = useTranslation("page");
+  return (
+    <Typography sx={{ fontSize: "0.78rem", ml: 1 }}>
+      {t("AboutDrawerDescript")}
+    </Typography>
+  );
+};
 
+const drawerBleeding = 52;
 const Root = styled("div")(({ theme }) => ({
   height: "100%",
   //   backgroundColor:
@@ -24,11 +59,9 @@ const Root = styled("div")(({ theme }) => ({
   //       ? grey[100]
   //       : theme.palette.background.default,
 }));
-
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[800],
 }));
-
 const Puller = styled(Box)(({ theme }) => ({
   width: 30,
   height: 6,
@@ -38,13 +71,28 @@ const Puller = styled(Box)(({ theme }) => ({
   top: 8,
   left: "calc(50% - 15px)",
 }));
-
 function SwipeableEdgeDrawer(props) {
   const { window } = props;
   const [open, setOpen] = React.useState(false);
-
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
+  };
+  const CheckProfile = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Button
+        onClick={toggleDrawer(true)}
+        sx={{
+          width: "100%",
+          color: "#fd3f01",
+          textTransform: "capitalize",
+          p: "0",
+          zIndex: "1200",
+        }}
+      >
+        {t("CheckProfile")}
+      </Button>
+    );
   };
 
   // This is used only for the example
@@ -55,16 +103,21 @@ function SwipeableEdgeDrawer(props) {
     <Root>
       <Global
         styles={{
+          ".MuiModal-root-MuiDrawer-root": {
+            zIndex: "2001",
+          },
+          ".PrivateSwipeArea-root": {
+            height: "0px",
+          },
           ".MuiDrawer-root > .MuiPaper-root": {
             height: `calc(50% - ${drawerBleeding}px)`,
             overflow: open === false ? "" : "visible",
           },
         }}
       />
-      <Box sx={{ textAlign: "center", pt: 1 }}>
-        <Button onClick={toggleDrawer(true)} sx={{ color: "#fd3f01" }}>
-          Open
-        </Button>
+      <Box sx={{ width: "100%", textAlign: "center", pt: 1 }}>
+        {/* CheckProfile */}
+        <CheckProfile />
       </Box>
       <SwipeableDrawer
         container={container}
@@ -89,20 +142,16 @@ function SwipeableEdgeDrawer(props) {
             left: 0,
           }}
         >
-          <Puller />
-          <Box sx={{ py: 4, px: 3, color: "#000" }}>
-            <Typography>Investment Value</Typography>
-            <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-              $ 500,890
-            </Typography>
-          </Box>
+          <Puller zIndex={toggleDrawer === true ? "0" : "1"} />
+          {/* Header */}
+          <DrawerHeader />
         </StyledBox>
         <StyledBox>
           <Box>
             {/* <Header title="Bar Chart" subtitle="Simple Bar Chart" /> */}
             <Box sx={{ height: "200px" }}>
               <StreamChart />
-              <Box sx={{ mt: "-45px", px: 2}}>
+              <Box sx={{ mt: "-45px", px: 2 }}>
                 <FlexBetween>
                   <Typography fontWeight={"bold"}>2020</Typography>
                   <Typography fontWeight={"bold"}>2060</Typography>
@@ -122,10 +171,8 @@ function SwipeableEdgeDrawer(props) {
             <Icon>
               <img src={InfoMountainIcon} alt={InfoMountainIcon} />
             </Icon>
-            <Typography sx={{ fontSize: "0.78rem", ml: 1 }}>
-              We automaically assume a savings growth rate of <br /> 5%. You can
-              adjust this later.
-            </Typography>
+            {/* AboutDrawerDescript */}
+            <AboutDrawerDescript wordBreak={"keep-all"} />
           </Box>
           {/* <Skeleton variant="rectangular" height="100%" /> */}
         </StyledBox>
