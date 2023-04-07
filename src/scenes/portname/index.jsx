@@ -12,11 +12,7 @@ const PortNameHeader = () => {
     <Header
       title={t("PortNameTitle")}
       subtitle={t("PortNameDescript")}
-      moresubtitle={
-        localStorage.getItem("language") === "en"
-          ? "We can help you build one that works for you."
-          : null
-      } // if 영어일 때만,
+      moresubtitle={t("PortNameMoreDesciprt")} // if 영어일 때만,
     />
   );
 };

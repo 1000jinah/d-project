@@ -16,6 +16,16 @@ function Dashboard() {
     const { t } = useTranslation("page");
     return <span>{t("CreateNewAccount")}</span>;
   };
+
+  const Welcome = () => {
+    const { t } = useTranslation("page");
+    return <span>{t("Welcome")}</span>;
+  };
+  const Hi = () => {
+    const { t } = useTranslation("page");
+    return <span>{t("Hi")}</span>;
+  };
+
   const LogInContinue = () => {
     const { t } = useTranslation("page");
     return <span>{t("LogInContinue")}</span>;
@@ -56,13 +66,7 @@ function Dashboard() {
     const { t } = useTranslation("page");
     return (
       <Header
-        title={
-          localStorage.getItem("language") === "en"
-            ? showText
-              ? "Hi!"
-              : "Welcome!"
-            : "GOLPにようこそ！"
-        }
+        title={showText ? <Hi /> : <Welcome />}
         subtitle={showText ? <CreateNewAccount /> : <LogInContinue />}
       />
     );
