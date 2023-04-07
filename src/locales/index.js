@@ -15,7 +15,7 @@ i18n
       en: en,
       jp: jp,
     },
-    lng: localStorage.getItem("language"), // if you're using a language detector, do not define the lng option
+    lng: "jp", // if you're using a language detector, do not define the lng option
     fallbackLng: localStorage.getItem("language"),
     debug: true,
 
