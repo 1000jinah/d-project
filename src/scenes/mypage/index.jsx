@@ -20,7 +20,7 @@ import RetirementIcon from "../../assets/icon_retirement.svg";
 import DollarsIcon from "../../assets/icon_raising50milliondollor.svg";
 import MyPageChartImage from "../../assets/img_mypage_chart.svg";
 import { useTranslation } from "react-i18next";
-
+import FixedBottomNavigation from "components/BottomHomeButton";
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : grey[800],
 }));
@@ -64,7 +64,6 @@ const MyPage = () => {
       </Box>
     );
   };
-
   const MypageAddPlan = () => {
     const { t } = useTranslation("page");
     return (
@@ -92,7 +91,6 @@ const MyPage = () => {
       </FlexBetween>
     );
   };
-
   const MyGoals = () => {
     const { t } = useTranslation("page");
     return (
@@ -110,7 +108,6 @@ const MyPage = () => {
       </FlexBetween>
     );
   };
-
   const MyCollege = () => {
     const { t } = useTranslation("page");
     return (
@@ -249,7 +246,7 @@ const MyPage = () => {
           >
             <Box sx={{ height: "200px" }}>
               {/* <MyPageChart /> */}
-              <img src={MyPageChartImage} alt={MyPageChartImage} />
+              <img width="100%" src={MyPageChartImage} alt={MyPageChartImage} />
               <Box sx={{ mt: "-px", px: 3 }}>
                 <FlexBetween>
                   <Typography>
@@ -291,6 +288,7 @@ const MyPage = () => {
           </Box>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 };

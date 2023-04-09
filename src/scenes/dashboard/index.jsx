@@ -8,7 +8,7 @@ import RememberPassword from "components/RememberPassword";
 import Header from "components/Header";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-
+import FixedBottomNavigation from "components/BottomHomeButton";
 function Dashboard() {
   const theme = useTheme();
   const [showText, setShowText] = useState();
@@ -101,6 +101,7 @@ function Dashboard() {
         </Box>
         <OAuth />
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

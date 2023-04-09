@@ -26,13 +26,13 @@ import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const SurveyFirstHeader = () => {
   const { t } = useTranslation("page");
   return (
     <Header title={t("SurveyFirstTitle")} subtitle={t("SurveyFirstDescipt")} />
   );
 };
-
 function MarginBar() {
   return (
     <Box
@@ -335,6 +335,7 @@ function SurveyFirst() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

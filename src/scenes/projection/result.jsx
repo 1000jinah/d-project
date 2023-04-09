@@ -35,6 +35,7 @@ import { useParams } from "react-router-dom";
 // import ProjectionSliders from "components/Sliders";
 import SwipeableEdgeDrawer from "components/ResultDrawer";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const EnMoney = () => {
   const { t } = useTranslation("page");
   return <span>{t("EnMoney")}</span>;
@@ -469,6 +470,7 @@ function ProjectionResult() {
         </Box> */}
         <SwipeableEdgeDrawer />
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

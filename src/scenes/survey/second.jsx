@@ -26,6 +26,7 @@ import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 import BoxesJapanImage from "../../assets/icon_box_jp.svg";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const SurveySecondHeader = () => {
   const { t } = useTranslation("page");
   return (
@@ -376,6 +377,7 @@ function Surveysecond() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

@@ -16,6 +16,7 @@ import DefaultButton from "components/DefaultButton";
 import { ArrowBack } from "@mui/icons-material";
 import TranslateButton from "../../components/Translate";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const QuickTitle = () => {
   const { t } = useTranslation("page");
   return (
@@ -327,6 +328,7 @@ export default function CustomizedAccordions() {
           <MarginBar />
         </AccordionDetails>
       </Accordion>
+      <FixedBottomNavigation />
     </Box>
   );
 }

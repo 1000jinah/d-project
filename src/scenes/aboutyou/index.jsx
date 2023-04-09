@@ -21,6 +21,7 @@ import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const AboutYouHeader = () => {
   const { t } = useTranslation("page");
   return <Header title={t("AboutYouTitle")} subtitle={t("AboutYouDescript")} />;
@@ -398,6 +399,7 @@ function PortfolioName() {
           Check profile
         </Box> */}
       </Box>
+      <FixedBottomNavigation />
     </Box>
   );
 }

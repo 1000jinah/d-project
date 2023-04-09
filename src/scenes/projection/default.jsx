@@ -34,6 +34,7 @@ import ProjectionSliders from "components/Sliders";
 import SwipeableEdgeDrawer from "components/DrawerDrawer";
 // import { display, width } from "@mui/system";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const EnMoney = () => {
   const { t } = useTranslation("page");
   return <span>{t("EnMoney")}</span>;
@@ -86,7 +87,6 @@ const ProjectionHeader = () => {
     </Box>
   );
 };
-
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
 }));
@@ -99,7 +99,6 @@ function MarginBar() {
     />
   );
 }
-
 // function StepSpaceBar() {
 //   return (
 //     <Box
@@ -500,6 +499,7 @@ function Projection() {
         </Box> */}
         <SwipeableEdgeDrawer />
       </Box>
+      <FixedBottomNavigation />
     </Box>
   );
 }

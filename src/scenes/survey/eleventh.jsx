@@ -27,6 +27,7 @@ import SellEveryIcon from "../../assets/img_selleverything.svg";
 import SellSomeIcon from "../../assets/img_sellsome.svg";
 import DoNothingIcon from "../../assets/img_donothing.svg";
 import BuyMoreIcon from "../../assets/img_buymore.svg";
+import FixedBottomNavigation from "components/BottomHomeButton";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 
 // function MarginBar() {
@@ -321,6 +322,7 @@ function SurveyEleventh() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

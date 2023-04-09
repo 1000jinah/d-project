@@ -17,6 +17,7 @@ import IntroImgSecond from "../../assets/img_illustration_introduction_second.sv
 import IntroImgThird from "../../assets/img_illustration_introduction_third.svg";
 // import { autoPlay } from "react-swipeable-views-utils";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const IntroduceFirst = () => {
   const { t } = useTranslation("page");
   return <span>{t("IntroduceFirst")}</span>;
@@ -302,6 +303,7 @@ function Introduce() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation />
     </Box>
   );
 }

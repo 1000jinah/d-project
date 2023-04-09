@@ -6,6 +6,7 @@ import FlexBetween from "components/FlexBetween";
 import Header from "components/Header";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const PortNameHeader = () => {
   const { t } = useTranslation("page");
   return (
@@ -123,6 +124,7 @@ function PortfolioName() {
           {/* !message === true ? theme.palette.secondary[100] : "#000" */}
         </Link>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

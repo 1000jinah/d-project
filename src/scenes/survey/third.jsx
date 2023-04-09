@@ -27,6 +27,7 @@ import StepFlagIcon from "../../assets/icon_flag_gray.svg";
 import StepFlagOrangeIcon from "../../assets/icon_flag_orange.svg";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const SurveyThirdHeader = () => {
   const { t } = useTranslation("page");
   return (
@@ -584,6 +585,7 @@ function SurveyThird() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }

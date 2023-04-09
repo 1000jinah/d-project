@@ -11,6 +11,7 @@ import { ArrowBack } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 import { useTranslation } from "react-i18next";
+import FixedBottomNavigation from "components/BottomHomeButton";
 const GoalHeader = () => {
   const { t } = useTranslation("page");
   return (
@@ -295,6 +296,7 @@ const GoalSecond = () => {
           </Box>
         </Stack>
       </Box>
+      <FixedBottomNavigation />
     </Box>
   );
 };

@@ -24,6 +24,7 @@ import StepCircleIcon from "../../assets/icon_golfball_orange.svg";
 // import StepEmptyCircleIcon from "../../assets/icon_golfball_gray.svg";
 // import StepBarIcon from "../../assets/icon_progressbar_gray.svg";
 import StepFlagIcon from "../../assets/icon_flag_gray.svg";
+import FixedBottomNavigation from "components/BottomHomeButton";
 // import CoinQueIcon from "../../assets/img_illustration_coin_question1.svg";
 
 // function MarginBar() {
@@ -306,6 +307,7 @@ function SurveyTenth() {
           </Link>
         </Box>
       </Box>
+      <FixedBottomNavigation/>
     </Box>
   );
 }
