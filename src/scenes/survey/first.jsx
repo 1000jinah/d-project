@@ -314,7 +314,12 @@ function SurveyFirst() {
               }}
               value="5"
               control={<Radio />}
-              label="High than 5%"
+              label={
+                localStorage.getItem("language") === "jp"
+                  ? "5%以上"
+                  : "High than 5%"
+              }
+            
               labelPlacement="start"
             />
           </RadioGroup>
