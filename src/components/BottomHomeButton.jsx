@@ -16,10 +16,10 @@ export default function FixedBottomNavigation({}) {
       theme={theme}
       sx={{
         display: "block",
-
         boxShadow: "none",
         backgroundColor: "transparent",
         position: "fixed",
+        zIndex:"20001",
         bottom: "-15px",
         right: 0,
         "& .MuiBottomNavigation-root": {
