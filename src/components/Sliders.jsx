@@ -127,7 +127,7 @@ export default function NonLinearSlider({ SliderTitle, SliderType }) {
   };
 
   return (
-    <Box>
+    <Box mt="1rem">
       <FlexBetween>
         <Typography
           fontSize={"12px"}
