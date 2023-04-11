@@ -268,6 +268,7 @@ function SurveyThird() {
       </Box>
       <Box
         mt="3.2rem"
+        mb="3rem"
         p="1.2rem 1.6rem"
         height="100%"
         // minHeight="667px"
