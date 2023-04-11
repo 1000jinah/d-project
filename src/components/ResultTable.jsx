@@ -50,7 +50,7 @@ export default function ResultTable() {
         },
       }}
     >
-      <Table sx={{ minWidth: 350, overflowX: "clip" }} aria-label="simple table">
+      <Table sx={{  }} aria-label="simple table">
         <TableBody>
           {rows.map((row) => (
             <TableRow

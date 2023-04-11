@@ -172,7 +172,7 @@ function SurveyEleventh() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
             <Typography
               sx={{
@@ -189,6 +189,7 @@ function SurveyEleventh() {
       <Box
         mt="3.2rem"
         p="1.2rem 1.6rem"
+        mb="3rem"
         height="100%"
         // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
@@ -308,7 +309,7 @@ function SurveyEleventh() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/twelfth"} sx={{}}>
@@ -322,7 +323,7 @@ function SurveyEleventh() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }
