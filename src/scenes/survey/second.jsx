@@ -239,7 +239,7 @@ function Surveysecond() {
       </Box>
       <Box
         mt="3.2rem"
-        mb={localStorage.getItem("language") === "jp" ? "3rem" : "0"}
+        mb="4rem"
         p="1.2rem 1.6rem"
         height="100%"
         // minHeight="667px"
@@ -257,7 +257,7 @@ function Surveysecond() {
           <img src={BoxesJapanImage} alt={BoxesJapanImage} />
         </Box>
         <MarginBar />
-        <FormControl sx={{ width: "100%", mb: 3 }}>
+        <FormControl sx={{ width: "100%" }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
@@ -368,7 +368,7 @@ function Surveysecond() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/third"} sx={{}}>
@@ -377,7 +377,7 @@ function Surveysecond() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }
