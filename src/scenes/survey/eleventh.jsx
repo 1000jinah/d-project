@@ -189,7 +189,7 @@ function SurveyEleventh() {
       <Box
         mt="3.2rem"
         p="1.2rem 1.6rem"
-        mb="3rem"
+        mb="4.5rem"
         height="100%"
         // minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
