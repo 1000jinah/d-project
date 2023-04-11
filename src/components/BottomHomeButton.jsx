@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import RestoreIcon from "@mui/icons-material/Restore";
 
-export default function FixedBottomNavigation({}) {
+export default function FixedBottomNavigation() {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
   return (
@@ -22,6 +22,9 @@ export default function FixedBottomNavigation({}) {
         zIndex:"20001",
         bottom: "-15px",
         right: 0,
+        "& .MuiSvgIcon-root":{
+          color:"transparent"
+        },
         "& .MuiBottomNavigation-root": {
           position: "relative",
           width: "100%",

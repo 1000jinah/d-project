@@ -240,7 +240,7 @@ const MyPage = () => {
         <Box>
           {/*  */}
           <StyledBox
-            sx={{ height: "154px" }}
+            sx={{ height: "160px" }}
             // borderBottom={"2px solid #000"}
             // borderTop={"1px solid #000"}
           >
@@ -265,7 +265,7 @@ const MyPage = () => {
           </StyledBox>
         </Box>
 
-        <Box mt="45px">
+        <Box mt="55px">
           <Divider />
         </Box>
         <Box component={Link} to="/way">

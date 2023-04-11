@@ -76,7 +76,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        height: 20,
+        height: 25,
       }}
     />
   );
@@ -316,10 +316,15 @@ export default function CustomizedAccordions() {
             <EightMin />
           </Typography>
           <MarginBar />
-          <Typography sx={{ color: theme.palette.secondary[500] }}>
+          <Typography
+            sx={{
+              color: theme.palette.secondary[500],
+            }}
+          >
             {/* You can still estimate, but this allows you to input more information about your financesso your plan will  be more accurate once you're done. */}
             <CompreDescript />
           </Typography>
+
           <MarginBar />
           <Link to="/goal/first">
             {/* Selected Button */}

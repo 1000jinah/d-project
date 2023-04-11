@@ -270,7 +270,8 @@ function PortfolioName() {
           {/* Skip  */}
           <Link
             variant="text"
-            sx={{
+            style={{
+              visibility: "hidden",
               color:
                 theme === "dark"
                   ? theme.palette.primary[1000]

@@ -293,7 +293,7 @@ function SurveyTenth() {
             left: "0",
             right: "0",
             p: "25px",
-            background: "#fff",
+            background: theme.palette.secondary[900]
           }}
         >
           <Link to={"/survey/eleventh"} sx={{}}>
