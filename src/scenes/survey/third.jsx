@@ -276,7 +276,7 @@ function SurveyThird() {
         {/* Header */}
         <SurveyThirdHeader />
         {/* <MarginBar /> */}
-        <FormControl sx={{ width: "100%", pb: 3 }}>
+        <FormControl sx={{ width: "100%" }}>
           {/* <FormLabel id="demo-radio-buttons-group-label">Gender</FormLabel> */}
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
