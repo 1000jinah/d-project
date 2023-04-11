@@ -192,7 +192,7 @@ function SurveyTwelfth() {
       <Box
         mt="3.2rem"
     mb="3rem"
-        p="1.2rem 0rem"
+        p="1.2rem 1.6rem"
         height="100%"
 
         sx={{ background: theme.palette.secondary[900] }}
