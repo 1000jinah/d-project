@@ -176,7 +176,7 @@ function Projection() {
     const { t } = useTranslation("page");
     return (
       <Box my={1} backgroundColor={"#fff"}>
-        <Box m={2}>
+        <Box p={2} pb={1}>
           {/* Retirement Age */}
           <ProjectionSliders
             defaultValue
@@ -190,7 +190,7 @@ function Projection() {
             }
           />
         </Box>
-        <Box m={2}>
+        <Box p={2} pb={1}>
           {/* Starting Balance */}
           <ProjectionSliders
             SliderTitle={
@@ -203,7 +203,7 @@ function Projection() {
             }
           />
         </Box>
-        <Box m={2}>
+        <Box p={2} pb={1}>
           {/* Monthly Deposit */}
           <ProjectionSliders
             defaultValue
@@ -217,7 +217,7 @@ function Projection() {
             }
           />
         </Box>
-        <Box m={2}>
+        <Box p={2} pb={1}>
           {/* Investment Period */}
           <ProjectionSliders
             defaultValue
