@@ -31,7 +31,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        height: 35,
+        height: 30,
       }}
     />
   );
@@ -195,9 +195,9 @@ function SurveyFifth() {
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Reaction to Finanical Market Declines"}
+          title={"Reaction to Finanical\n Market Declines"}
           subtitle={
-            "Based on my past investment experience, I tend to sell stock investments and invest the money in safer assets during market declines."
+            "Based on my past investment experience,\n I tend to sell stock investments and invest\n the money in safer assets during market declines."
           }
         />
         {/* <Box sx={{ textAlign: "center" }}>

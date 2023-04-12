@@ -195,9 +195,9 @@ function SurveyFourth() {
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Reaction to Finanical Market Declines"}
+          title={"Reaction to Finanical\n Market Declines"}
           subtitle={
-            "What has been your personal experience with financial market declines? Consider your feelings during the steeo market declines that occurred during the Great Recession when the S&P 500 Index lost more than 40% over a six month period from September 1, 2008 through February 28, 2009. How did you (or would you have) reacted during that period"
+            "What has been your personal experience with financial market declines?\n Consider your feelings during the steeo market declines that occurred during the Great Recession when the S&P 500 Index lost more than 40% over a six month period from September 1, 2008 through February 28, 2009.\n How did you (or would you have) reacted during that period."
           }
         />
         {/* <Box sx={{ textAlign: "center" }}>
@@ -212,6 +212,7 @@ function SurveyFourth() {
             name="radio-buttons-group"
           >
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -223,10 +224,11 @@ function SurveyFourth() {
               }}
               value="1"
               control={<Radio />}
-              label="I sold / would have sold all of my stock investment."
+              label={"I sold / would have sold\n all of my stock investment."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -238,10 +240,11 @@ function SurveyFourth() {
               }}
               value="2"
               control={<Radio />}
-              label="I sold / would have sold some of my stock investment."
+              label={"I sold / would have sold\n some of my stock investment."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -253,10 +256,13 @@ function SurveyFourth() {
               }}
               value="3"
               control={<Radio />}
-              label="I made / would have made No changes to my stock investments."
+              label={
+                "I made / would have made\n No changes to my stock investments."
+              }
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -268,7 +274,9 @@ function SurveyFourth() {
               }}
               value="4"
               control={<Radio />}
-              label="I increased / would have increased my stock investments."
+              label={
+                "I increased / would have increased\n my stock investments."
+              }
               labelPlacement="start"
             />
           </RadioGroup>
@@ -280,7 +288,7 @@ function SurveyFourth() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/fifth"} sx={{}}>
@@ -294,7 +302,7 @@ function SurveyFourth() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }

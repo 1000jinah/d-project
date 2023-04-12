@@ -17,6 +17,7 @@ import { ArrowBack } from "@mui/icons-material";
 import TranslateButton from "../../components/Translate";
 import { useTranslation } from "react-i18next";
 import FixedBottomNavigation from "components/BottomHomeButton";
+
 const QuickTitle = () => {
   const { t } = useTranslation("page");
   return (
@@ -28,7 +29,12 @@ const QuickTitle = () => {
 const QuickDescript = () => {
   const { t } = useTranslation("page");
   return (
-    <Typography sx={{ color: "#808080" }}>
+    <Typography
+      sx={{ color: "#808080" }}
+      style={{
+        whiteSpace: "pre-line",
+      }}
+    >
       {/* theme.palette.secondary[500] */}
       {t("QuickDescript")}
     </Typography>
@@ -45,7 +51,12 @@ const CompreTitle = () => {
 const CompreDescript = () => {
   const { t } = useTranslation("page");
   return (
-    <Typography sx={{ color: "#808080" }}>
+    <Typography
+      sx={{ color: "#808080" }}
+      style={{
+        whiteSpace: "pre-line",
+      }}
+    >
       {/* theme.palette.secondary[500] */}
       {t("CompreDescript")}
     </Typography>

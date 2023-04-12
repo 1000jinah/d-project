@@ -20,15 +20,39 @@ import { useTranslation } from "react-i18next";
 import FixedBottomNavigation from "components/BottomHomeButton";
 const IntroduceFirst = () => {
   const { t } = useTranslation("page");
-  return <span>{t("IntroduceFirst")}</span>;
+  return (
+    <span
+      style={{
+        whiteSpace: "pre-line",
+      }}
+    >
+      {t("IntroduceFirst")}
+    </span>
+  );
 };
 const IntroduceSecond = () => {
   const { t } = useTranslation("page");
-  return <span>{t("IntroduceSecond")}</span>;
+  return (
+    <span
+      style={{
+        whiteSpace: "pre-line",
+      }}
+    >
+      {t("IntroduceSecond")}
+    </span>
+  );
 };
 const IntroduceThird = () => {
   const { t } = useTranslation("page");
-  return <span>{t("IntroduceThird")}</span>;
+  return (
+    <span
+      style={{
+        whiteSpace: "pre-line",
+      }}
+    >
+      {t("IntroduceThird")}
+    </span>
+  );
 };
 const StartButton = () => {
   const { t } = useTranslation("page");

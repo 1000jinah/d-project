@@ -195,11 +195,10 @@ function SurveyEleventh() {
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Choose the investment portfolio you want"}
+          title={"Small Company Investing"}
           subtitle={
-            "Imagine your investment of $1,000 becomes $750 over 3 months, but it's proven historically that it will recover in 3-5 years."
+            "Imagine your investment of $1,000 becomes\n $750 over 3 months, but it's proven historically\n that it will recover in 3-5 years.\n What will you do?"
           }
-          moresubtitle={"What will you do?"}
         />
         {/* <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />

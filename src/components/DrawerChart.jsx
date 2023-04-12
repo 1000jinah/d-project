@@ -45,7 +45,10 @@ const DrawerHeader = () => {
 const AboutDrawerDescript = () => {
   const { t } = useTranslation("page");
   return (
-    <Typography sx={{ fontSize: "0.78rem", ml: 1 }}>
+    <Typography
+      sx={{ fontSize: "0.78rem", ml: 1 }}
+      style={{ whiteSpace: "pre-line" }}
+    >
       {t("AboutDrawerDescript")}
     </Typography>
   );

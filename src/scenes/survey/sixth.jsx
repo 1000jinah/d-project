@@ -30,7 +30,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        height: 35,
+        height: 10,
       }}
     />
   );
@@ -172,7 +172,7 @@ function SurveySixth() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
             <Typography
               sx={{
@@ -188,15 +188,16 @@ function SurveySixth() {
       </Box>
       <Box
         mt="3.2rem"
+        mb="3.5rem"
         p="1.2rem 1.6rem"
         height="100%"
         minHeight="667px"
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Reaction to Flucuation in Portfolio Values"}
+          title={"Reaction to Flucuation in\n Portfolio Values"}
           subtitle={
-            "How would you react if you lost $50,000 on your $250,000 investment portfolio tommorrow? Please select the statement below that best reflects your reaction to the decline in investment value."
+            "How would you react if you lost $50,000 on your $250,000 investment portfolio tommorrow?\n Please select the statement below that best reflects your reaction to the decline in investment value."
           }
         />
         {/* <Box sx={{ textAlign: "center" }}>
@@ -211,6 +212,7 @@ function SurveySixth() {
             name="radio-buttons-group"
           >
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -222,10 +224,13 @@ function SurveySixth() {
               }}
               value="1"
               control={<Radio />}
-              label="I maintain a long-term focus with my investments and wouldn't change my investment plan."
+              label={
+                "I maintain a long-term focus with\n my investments and wouldn't\n change my investment plan."
+              }
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -237,7 +242,9 @@ function SurveySixth() {
               }}
               value="2"
               control={<Radio />}
-              label="I would be very concerned, but probably wouldn't change my Investment plan."
+              label={
+                "I would be very concerned,\n but probably wouldn't change my\n Investment plan."
+              }
               labelPlacement="start"
             />
             <FormControlLabel
@@ -256,6 +263,7 @@ function SurveySixth() {
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -267,10 +275,10 @@ function SurveySixth() {
               }}
               value="4"
               control={<Radio />}
-              label="I would probably make a change to my investment plan."
+              label={"I would probably make a change\n to my investment plan."}
               labelPlacement="start"
             />
-            <FormControlLabel
+            <FormControlLabel style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -282,7 +290,7 @@ function SurveySixth() {
               }}
               value="5"
               control={<Radio />}
-              label="I would definitely make a change to my investment plan."
+              label={"I would definitely make a change\n to my investment plan."}
               labelPlacement="start"
             />
           </RadioGroup>
@@ -294,7 +302,7 @@ function SurveySixth() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/seventh"} sx={{}}>
@@ -308,7 +316,7 @@ function SurveySixth() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }

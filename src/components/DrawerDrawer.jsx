@@ -75,7 +75,7 @@ function SwipeableEdgeDrawer(props) {
   const SavePlanCompleteTitle = () => {
     const { t } = useTranslation("page");
     return (
-      <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+      <Typography variant="h3" sx={{ fontWeight: "bold", fontSize: "20px" }}>
         {t("SaveYourPlanTitle")}
       </Typography>
     );
@@ -83,7 +83,10 @@ function SwipeableEdgeDrawer(props) {
   const SavePlanCompleteDescript = () => {
     const { t } = useTranslation("page");
     return (
-      <Typography sx={{ lineHeight: "1.8", color: "#808080" , px: "20px"}}>
+      <Typography
+        sx={{ lineHeight: "1.8", color: "#808080", px: "20px" }}
+        style={{ whiteSpace: "pre-line" }}
+      >
         {t("SaveYourPlanDescript")}
       </Typography>
     );

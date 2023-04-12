@@ -192,10 +192,7 @@ function SurveyEighth() {
         <Header
           title={"International Investment Preference"}
           subtitle={
-            "International investing can help increase your portfolio's diversification as it enables you to spread risk across a variety of economies and financial markets."
-          }
-          moresubtitle={
-            "International investments include developed markets, such as France and Germany, with well -established companies and listing standards similar to the U.S and to also include more speculative emerging markets in countries with rapid but volatile economic growth. Which statement best reflects your view on international investing?"
+            "International investing can help increase your portfolio's diversification as it enables you to spread risk across a variety of economies and financial markets.\n International investments include developed markets, such as France and Germany,\n with well -established companies and listing standards similar to the U.S and to also include more speculative emerging markets in countries with rapid but volatile economic growth.\n Which statement best reflects your view on international investing?"
           }
         />
         {/* <Box sx={{ textAlign: "center" }}>
@@ -210,6 +207,7 @@ function SurveyEighth() {
             name="radio-buttons-group"
           >
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -221,10 +219,11 @@ function SurveyEighth() {
               }}
               value="1"
               control={<Radio />}
-              label="I am very comfortable with international investments."
+              label={"I am very comfortable with\n international investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -236,10 +235,11 @@ function SurveyEighth() {
               }}
               value="2"
               control={<Radio />}
-              label="I am comfortable with international investments."
+              label={"I am comfortable with\n international investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -251,10 +251,13 @@ function SurveyEighth() {
               }}
               value="3"
               control={<Radio />}
-              label="I am somewhat comfortable with international investments."
+              label={
+                "I am somewhat comfortable with\n international investments."
+              }
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -266,10 +269,11 @@ function SurveyEighth() {
               }}
               value="4"
               control={<Radio />}
-              label="I am somewhat uneasy with international investments."
+              label={"I am somewhat uneasy with\n international investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -281,7 +285,7 @@ function SurveyEighth() {
               }}
               value="5"
               control={<Radio />}
-              label="I am uneasy with international investments."
+              label={"I am uneasy with\n international investments."}
               labelPlacement="start"
             />
           </RadioGroup>
@@ -293,7 +297,7 @@ function SurveyEighth() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/ninth"} sx={{}}>
@@ -307,7 +311,7 @@ function SurveyEighth() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }

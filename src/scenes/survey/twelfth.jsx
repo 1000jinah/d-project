@@ -198,7 +198,7 @@ function SurveyTwelfth() {
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Choose the investment portfolio you want"}
+          title={"Choose the investment\n portfolio you want"}
           subtitle={"Select your desire investment portfolio"}
         />
         {/* <Box sx={{ textAlign: "center" }}>

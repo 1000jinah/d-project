@@ -31,7 +31,7 @@ function MarginBar() {
   return (
     <Box
       sx={{
-        height: 35,
+        height: 10,
       }}
     />
   );
@@ -195,9 +195,9 @@ function SurveySeventh() {
         sx={{ background: theme.palette.secondary[900] }}
       >
         <Header
-          title={"Reaction to Flucuation in Portfolio Values"}
+          title={"Reaction to Flucuation\n in Portfolio Values"}
           subtitle={
-            "Generally I prefer a portfolio with little or no flucturation in value, and I am willing to accpet the lower potential returns associated with this type of portfolio."
+            "Generally I prefer a portfolio with little or no flucturation in value, and I am willing to\n accpet the lower potential returns\n associated with this type of portfolio."
           }
         />
         {/* <Box sx={{ textAlign: "center" }}>

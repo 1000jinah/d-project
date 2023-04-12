@@ -15,12 +15,7 @@ import FixedBottomNavigation from "components/BottomHomeButton";
 const GoalHeader = () => {
   const { t } = useTranslation("page");
   return (
-    <Header
-      sx={{ whiteSpace: "pre-line" }}
-      title={t("GoalSecondTitle")}
-      subtitle={t("GoalIntro")}
-      moresubtitle={t("GoalDescript")}
-    />
+    <Header title={t("GoalSecondTitle")} subtitle={t("GoalSecondIntro")} />
   );
 };
 const Retirement = () => {

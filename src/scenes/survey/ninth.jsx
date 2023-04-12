@@ -169,7 +169,7 @@ function SurveyNinth() {
                   : theme.palette.primary[0],
               textTransform: "capitalize",
             }}
-             to="/projection/default"
+            to="/projection/default"
           >
             <Typography
               sx={{
@@ -194,9 +194,8 @@ function SurveyNinth() {
         <Header
           title={"Value Investment"}
           subtitle={
-            "Historical data suggests the expected returns of value stocks are higher than those of growth stocks in both U.s and international markets because there are highter risks associated with investing in value stocks."
+            "Historical data suggests the expected returns of value stocks are higher than those of growth stocks in both U.S and international markets because there are highter risks associated with investing in value stocks.\n While the stocks of value companies may  be likely to outperform over the long term, such investments are also likely to underperform the maket for certain periods of time.\n How comfortable are you with including value company investments in your portfolio?"
           }
-          moresubtitle={"While the stocks of value companies may  be likely to outperform over the long term, such investments are also likely to underperform the maket for certain periods of time. How comfortable are you with including value company investments in your portfolio?"}
         />
         {/* <Box sx={{ textAlign: "center" }}>
           <img src={CoinQueIcon} alt={CoinQueIcon} />
@@ -210,6 +209,7 @@ function SurveyNinth() {
             name="radio-buttons-group"
           >
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -221,10 +221,11 @@ function SurveyNinth() {
               }}
               value="1"
               control={<Radio />}
-              label="I am very comfortable with value company investments."
+              label={"I am very comfortable with\n value company investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -236,10 +237,11 @@ function SurveyNinth() {
               }}
               value="2"
               control={<Radio />}
-              label="I am comfortable with value company investments."
+              label={"I am comfortable with\n value company investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -251,10 +253,13 @@ function SurveyNinth() {
               }}
               value="3"
               control={<Radio />}
-              label="I am somewhat comfortable with international investments."
+              label={
+                "I am somewhat comfortable with\n international investments."
+              }
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -266,10 +271,11 @@ function SurveyNinth() {
               }}
               value="4"
               control={<Radio />}
-              label="I am somewhat uneasy with international investments."
+              label={"I am somewhat uneasy with\n international investments."}
               labelPlacement="start"
             />
             <FormControlLabel
+              style={{ whiteSpace: "pre-line" }}
               sx={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -281,7 +287,7 @@ function SurveyNinth() {
               }}
               value="5"
               control={<Radio />}
-              label="I am uneasy with international investments."
+              label={"I am uneasy with\n international investments."}
               labelPlacement="start"
             />
           </RadioGroup>
@@ -293,7 +299,7 @@ function SurveyNinth() {
             left: "0",
             right: "0",
             p: "25px",
-            background: theme.palette.secondary[900]
+            background: theme.palette.secondary[900],
           }}
         >
           <Link to={"/survey/tenth"} sx={{}}>
@@ -307,7 +313,7 @@ function SurveyNinth() {
           </Link>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }

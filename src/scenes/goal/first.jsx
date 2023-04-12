@@ -12,14 +12,7 @@ import { useTranslation } from "react-i18next";
 import FixedBottomNavigation from "components/BottomHomeButton";
 const GoalHeader = () => {
   const { t } = useTranslation("page");
-  return (
-    <Header
-      sx={{ whiteSpace: "pre-line" }}
-      title={t("GoalFirstTitle")}
-      subtitle={t("GoalIntro")}
-      moresubtitle={t("GoalDescript")}
-    />
-  );
+  return <Header title={t("GoalFirstTitle")} subtitle={t("GoalFirstIntro")} />;
 };
 const JustInvest = () => {
   const { t } = useTranslation("page");

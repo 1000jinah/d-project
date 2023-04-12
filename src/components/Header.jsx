@@ -7,14 +7,23 @@ const Header = ({ title, subtitle, moresubtitle }) => {
         variant="h4"
         color={theme.palette.primary[100]}
         fontWeight="bold"
+        style={{ whiteSpace: "pre-line" }}
         sx={{ mb: "5px", lineHeight: "1.5" }}
       >
         {title}
       </Typography>
-      <Typography variant="h6" color={theme.palette.secondary[100]}>
+      <Typography
+        variant="h6"
+        style={{ whiteSpace: "pre-line" }}
+        color={theme.palette.secondary[100]}
+      >
         {subtitle}
       </Typography>
-      <Typography variant="h6" color={theme.palette.secondary[100]}>
+      <Typography
+        variant="h6"
+        style={{ whiteSpace: "pre-line" }}
+        color={theme.palette.secondary[100]}
+      >
         {moresubtitle}
       </Typography>
     </Box>
