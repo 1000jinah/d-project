@@ -133,6 +133,8 @@ function PortfolioName() {
       <DefaultButton
         buttonName={t("Continue")}
         sx={{
+          position: "static",
+          zIndex: "3000",
           backgroundColor: theme.palette.secondary[100],
         }}
       />
