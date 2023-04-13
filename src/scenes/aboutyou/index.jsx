@@ -134,7 +134,7 @@ function PortfolioName() {
         buttonName={t("Continue")}
         sx={{
           position: "static",
-          zIndex: "3000",
+          zIndex: "30000",
           backgroundColor: theme.palette.secondary[100],
         }}
       />
