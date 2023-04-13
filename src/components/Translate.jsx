@@ -9,7 +9,7 @@ import {
   Typography,
 } from "@mui/material";
 // import { useEffect } from "react";
-import TranslateLang from "../assets/translate_lang.svg";
+import TranslateLang from "../assets/world.svg";
 import JapaneseIcon from "../assets/japanese.svg";
 import EnglishIcon from "../assets/english.svg";
 import { useTranslation } from "react-i18next";
@@ -53,8 +53,8 @@ export default function TranslateButton() {
         onClick={handleClick}
       >
         <img
-          width="42px"
-          height="42px"
+          width="22px"
+          height="22px"
           color="#fff"
           src={TranslateLang}
           alt={TranslateLang}
