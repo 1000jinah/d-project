@@ -17,7 +17,7 @@ const rows = [
   createData("VEA", "Vanguard FTSE Developed Markets", "25%"),
   createData("VWO", "Vanguard Emerging Makerts", "15%"),
   createData("IJH", "iShared S&P MidCap 400", "13%"),
-  createData("RWR", "SPDR Dow Jones REIT ETF", "12%"),
+ // createData("RWR", "SPDR Dow Jones REIT ETF", "12%"),
 ];
 
 export default function BasicTable() {
