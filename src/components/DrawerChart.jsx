@@ -91,6 +91,7 @@ function SwipeableEdgeDrawer(props) {
           textTransform: "capitalize",
           p: "0",
           zIndex: "1200",
+          fontWeight: "bold",
         }}
       >
         {t("CheckProfile")}
