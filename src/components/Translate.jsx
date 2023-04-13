@@ -53,7 +53,7 @@ export default function TranslateButton() {
         onClick={handleClick}
       >
         <img
-          width="24px"
+          width="24x"
           height="24px"
           color="#fff"
           src={TranslateLang}
