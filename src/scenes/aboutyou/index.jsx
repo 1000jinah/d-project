@@ -310,7 +310,7 @@ function PortfolioName() {
                 {...params}
                 variant="standard"
                 placeholder={
-                  localStorage.getItem("language") === "jp" ? "5 年" : "5 Years"
+                  localStorage.getItem("language") === "jp" ? "5 年" : "40 Year"
                 }
               />
             )}
@@ -335,7 +335,7 @@ function PortfolioName() {
                 placeholder={
                   localStorage.getItem("language") === "jp"
                     ? "7 万円"
-                    : "$ 7,000"
+                    : "$ 2,000"
                 }
               />
             )}
@@ -360,7 +360,7 @@ function PortfolioName() {
                 placeholder={
                   localStorage.getItem("language") === "jp"
                     ? "6 万円"
-                    : "$ 6,000"
+                    : "$ 95,000"
                 }
               />
             )}
@@ -385,7 +385,7 @@ function PortfolioName() {
                 placeholder={
                   localStorage.getItem("language") === "jp"
                     ? "105 万円"
-                    : "$ 105,000"
+                    : "$ 15,000"
                 }
               />
             )}
@@ -408,6 +408,7 @@ function PortfolioName() {
 }
 export default PortfolioName;
 const MoneyAndYear = [
+  
   {
     money: localStorage.getItem("language") === "jp" ? "5 万円" : "$ 5,000",
     year: localStorage.getItem("language") === "jp" ? "1 年" : "1 Year",
@@ -487,6 +488,87 @@ const MoneyAndYear = [
   {
     money: localStorage.getItem("language") === "jp" ? "100 万円" : "$ 100,000",
     year: localStorage.getItem("language") === "jp" ? "20 年" : "20 Year",
+  },
+  //
+  {
+    money: localStorage.getItem("language") === "jp" ? "105 万円" : "$ 105,000",
+    year: localStorage.getItem("language") === "jp" ? "21 年" : "21 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "110 万円" : "$ 110,000",
+    year: localStorage.getItem("language") === "jp" ? "22 年" : "22 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "115 万円" : "$ 115,000",
+    year: localStorage.getItem("language") === "jp" ? "23 年" : "23 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "120 万円" : "$ 120,000",
+    year: localStorage.getItem("language") === "jp" ? "24 年" : "24 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "125 万円" : "$ 125,000",
+    year: localStorage.getItem("language") === "jp" ? "25 年" : "25 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "130 万円" : "$ 130,000",
+    year: localStorage.getItem("language") === "jp" ? "26 年" : "26 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "135 万円" : "$ 135,000",
+    year: localStorage.getItem("language") === "jp" ? "27 年" : "27 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "140 万円" : "$ 140,000",
+    year: localStorage.getItem("language") === "jp" ? "28 年" : "28 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "145 万円" : "$ 145,000",
+    year: localStorage.getItem("language") === "jp" ? "29 年" : "29 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "150 万円" : "$ 150,000",
+    year: localStorage.getItem("language") === "jp" ? "30 年" : "30 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "155 万円" : "$ 155,000",
+    year: localStorage.getItem("language") === "jp" ? "31 年" : "31 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "160 万円" : "$ 160,000",
+    year: localStorage.getItem("language") === "jp" ? "32 年" : "32 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "165 万円" : "$ 165,000",
+    year: localStorage.getItem("language") === "jp" ? "33 年" : "33 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "170 万円" : "$ 170,000",
+    year: localStorage.getItem("language") === "jp" ? "34 年" : "34 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "175 万円" : "$ 175,000",
+    year: localStorage.getItem("language") === "jp" ? "35 年" : "35 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "180 万円" : "$ 180,000",
+    year: localStorage.getItem("language") === "jp" ? "36 年" : "36 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "185 万円" : "$ 185,000",
+    year: localStorage.getItem("language") === "jp" ? "37 年" : "37 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "190 万円" : "$ 190,000",
+    year: localStorage.getItem("language") === "jp" ? " 38 年" : "38 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "195 万円" : "$ 195,000",
+    year: localStorage.getItem("language") === "jp" ? "39 年" : "39 Year",
+  },
+  {
+    money: localStorage.getItem("language") === "jp" ? "200 万円" : "$ 200,000",
+    year: localStorage.getItem("language") === "jp" ? "40 年" : "40 Year",
   },
 ];
 //

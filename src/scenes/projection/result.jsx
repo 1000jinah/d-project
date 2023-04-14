@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import BasicTable from "../../components/HoldingTable";
-import ResultTable from "../../components/ResultTable";
+// import ResultTable from "../../components/ResultTable";
 // import DefaultButton from "components/DefaultButton";
 import FlexBetween from "components/FlexBetween";
 // import Header from "components/Header";
@@ -36,6 +36,13 @@ import { useParams } from "react-router-dom";
 import SwipeableEdgeDrawer from "components/ResultDrawer";
 import { useTranslation } from "react-i18next";
 import FixedBottomNavigation from "components/BottomHomeButton";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import Paper from "@mui/material/Paper";
+
+import TableRow from "@mui/material/TableRow";
 const EnMoney = () => {
   const { t } = useTranslation("page");
   return <span>{t("EnMoney")}</span>;
@@ -71,7 +78,108 @@ function MarginBar() {
 function ProjectionResult() {
   const { profilename } = useParams();
   console.log(profilename);
+  function createData(name, percentage) {
+    return { name, percentage };
+  }
 
+  const rows = [
+    createData(
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "退職する予定年齢"
+          : "Retirement Age"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "退職する予定年齢"
+          : "Investment Horizon"
+        : localStorage.getItem("language") === "jp"
+        ? "退職する予定年齢"
+        : "Investment Horizon",
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "65 歳"
+          : "70 Age"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "65 歳"
+          : "3 Years"
+        : localStorage.getItem("language") === "jp"
+        ? "65 歳"
+        : "10 Years"
+    ),
+    createData(
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "退職後の収入"
+          : "Retirement income"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "退職後の収入"
+          : "Target Investment Amount"
+        : localStorage.getItem("language") === "jp"
+        ? "退職後の収入"
+        : "Target Investment Amount",
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "15 万円"
+          : "$ 97,000"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "15 万円"
+          : "$ 4,500"
+        : localStorage.getItem("language") === "jp"
+        ? "15 万円"
+        : "$ 21,700"
+    ),
+    createData(
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "初期投資金額"
+          : "Initial Investment Amount"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "初期投資金額"
+          : "Initial Investment Amount"
+        : localStorage.getItem("language") === "jp"
+        ? "初期投資金額"
+        : "Initial Investment Amount",
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "10 万円"
+          : "$ 15,000"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "10 万円"
+          : "$ 1,000"
+        : localStorage.getItem("language") === "jp"
+        ? "10 万円"
+        : "$ 1,820"
+    ),
+    createData(
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "毎月積立額"
+          : "Monthly Investment Amount"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "毎月積立額"
+          : "Monthly Investment Amount"
+        : localStorage.getItem("language") === "jp"
+        ? "毎月積立額"
+        : "Monthly Investment Amount",
+      profilename === "1"
+        ? localStorage.getItem("language") === "jp"
+          ? "5 年"
+          : "$ 2,000"
+        : profilename === "2"
+        ? localStorage.getItem("language") === "jp"
+          ? "5 年"
+          : "$ 1,160"
+        : localStorage.getItem("language") === "jp"
+        ? "5 年"
+        : "$ 2,500"
+    ),
+  ];
   const ProjectionHeader = () => {
     const { t } = useTranslation("page");
     return (
@@ -100,12 +208,13 @@ function ProjectionResult() {
                 : " 97,000"
               : localStorage.getItem("language") === "jp"
               ? "169,769"
-              : " 21,700"}          </Typography>
+              : " 21,700"}{" "}
+          </Typography>
           <Typography variant="h4">
             {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
           </Typography>
         </Box>
-  
+
         {/* <Box>
                   <Typography sx={{ mb: "10px", textIndent: "10px" }}>
                     Expected Outcome
@@ -125,7 +234,7 @@ function ProjectionResult() {
       </Box>
     );
   };
-  
+
   const theme = useTheme();
   const ProjectionRiskBox = () => {
     const { t } = useTranslation("page");
@@ -188,7 +297,38 @@ function ProjectionResult() {
       </FlexBetween>
     );
   };
-
+  const TableList = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Table sx={{}} aria-label="simple table">
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{
+                "&:last-child td, &:last-child th": { border: 0 },
+                width: "100%",
+                height: "45px",
+              }}
+            >
+              <TableCell
+                sx={{ fontSize: "14px", p: "0px", color: "#808080" }}
+                component="th"
+                scope="row"
+              >
+                {row.name}
+              </TableCell>
+              <TableCell
+                sx={{ p: "0px", fontSize: "14px", textAlign: "right" }}
+              >
+                {row.percentage}
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    );
+  };
   //   const [message, setMessage] = useState("");
   const [value, setValue] = React.useState("1");
 
@@ -401,7 +541,18 @@ function ProjectionResult() {
               {/* ProjectionRiskBox */}
               <ProjectionRiskBox />
               <MarginBar />
-              <ResultTable />
+              <TableContainer
+                component={Paper}
+                sx={{
+                  boxShadow: "none",
+                  "& .MuiTableCell-root": {
+                    padding: "10px",
+                  },
+                }}
+              >
+                <TableList />
+              </TableContainer>
+
               <MarginBar />
             </TabPanel>
             <TabPanel value="2" sx={{ p: "0", m: " 0" }}>
@@ -445,7 +596,18 @@ function ProjectionResult() {
               {/* ProjectionRiskBox */}
               <ProjectionRiskBox />
               <MarginBar />
-              <ResultTable />
+              <TableContainer
+                component={Paper}
+                sx={{
+                  boxShadow: "none",
+                  "& .MuiTableCell-root": {
+                    padding: "10px",
+                  },
+                }}
+              >
+                <TableList />
+              </TableContainer>
+
               <MarginBar />
             </TabPanel>
             <TabPanel value="3" sx={{ p: "0", m: " 0" }}>
@@ -471,7 +633,18 @@ function ProjectionResult() {
               {/* ProjectionRiskBox */}
               <ProjectionRiskBox />
               <MarginBar />
-              <ResultTable />
+              <TableContainer
+                component={Paper}
+                sx={{
+                  boxShadow: "none",
+                  "& .MuiTableCell-root": {
+                    padding: "10px",
+                  },
+                }}
+              >
+                <TableList />
+              </TableContainer>
+
               <MarginBar />
             </TabPanel>
           </TabContext>
@@ -481,7 +654,7 @@ function ProjectionResult() {
         </Box> */}
         <SwipeableEdgeDrawer />
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 }

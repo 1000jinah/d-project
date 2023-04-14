@@ -76,7 +76,7 @@ function SwipeableEdgeDrawer(props) {
           textTransform: "capitalize",
         }}
       >
-        {t("Submit")}
+        {t("Download")}
       </Button>
     );
   };

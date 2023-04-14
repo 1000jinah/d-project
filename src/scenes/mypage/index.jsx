@@ -77,10 +77,8 @@ const MyPage = () => {
             <img src={MoneyIcon} alt={MoneyIcon} />
           </Icon>
           <Box ml={2}>
+            <Typography color={"#211d1d"}>{t("ManagePortfolio")}</Typography>
             <Typography fontSize={"11px"} color={"#808080"}>
-              {t("ManagePortfolio")}
-            </Typography>
-            <Typography color={"#211d1d"} fontWeight={"bold"}>
               {t("AddNewPlan")}
             </Typography>
           </Box>
@@ -118,10 +116,8 @@ const MyPage = () => {
               <img src={CollegeIcon} alt={CollegeIcon} />
             </Icon>
             <Box ml={2}>
+              <Typography color={"#211d1d"}>{t("MyCollege")}</Typography>
               <Typography fontSize={"11px"} color={"#808080"}>
-                {t("MyCollege")}
-              </Typography>
-              <Typography color={"#211d1d"} fontWeight={"bold"}>
                 {t("LifePlanInvestment")}
               </Typography>
             </Box>
@@ -153,17 +149,17 @@ const MyPage = () => {
               <img src={RetirementIcon} alt={RetirementIcon} />
             </Icon>
             <Box ml={2}>
+              <Typography color={"#211d1d"}>{t("MyRetirement")}</Typography>
               <Typography fontSize={"11px"} color={"#808080"}>
-                {t("MyRetirement")}
-              </Typography>
-              <Typography color={"#211d1d"} fontWeight={"bold"}>
                 {t("LifePlanInvestment")}
               </Typography>
             </Box>
           </FlexBetween>
           <Box>
             <Typography fontWeight={"bold"}>
-              {localStorage.getItem("language") === "jp" ? "75万円" : "$ 97,000"}
+              {localStorage.getItem("language") === "jp"
+                ? "75万円"
+                : "$ 97,000"}
             </Typography>
             <Typography textAlign={"right"} fontSize={"11px"} color={"#808080"}>
               23%
@@ -188,17 +184,17 @@ const MyPage = () => {
               <img src={DollarsIcon} alt={DollarsIcon} />
             </Icon>
             <Box ml={2}>
+              <Typography color={"#211d1d"}>{t("RasingInvest")}</Typography>
               <Typography fontSize={"11px"} color={"#808080"}>
-                {t("RasingInvest")}
-              </Typography>
-              <Typography color={"#211d1d"} fontWeight={"bold"}>
                 {t("GeneralInvestment")}
               </Typography>
             </Box>
           </FlexBetween>
           <Box>
             <Typography fontWeight={"bold"}>
-              {localStorage.getItem("language") === "jp" ? "35万円" : "$ 21,700"}
+              {localStorage.getItem("language") === "jp"
+                ? "35万円"
+                : "$ 21,700"}
             </Typography>
             <Typography textAlign={"right"} fontSize={"11px"} color={"#808080"}>
               68%
@@ -288,7 +284,7 @@ const MyPage = () => {
           </Box>
         </Box>
       </Box>
-      <FixedBottomNavigation/>
+      <FixedBottomNavigation />
     </Box>
   );
 };
