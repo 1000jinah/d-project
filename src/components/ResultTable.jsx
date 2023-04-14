@@ -5,14 +5,20 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 // import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
+import { useParams } from "react-router-dom";
 // import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 // import { mockBarData as data } from "../data/mockOutData";
+
+
+
 function createData(name, percentage) {
+
   return { name, percentage };
 }
 
 const rows = [
+  
   createData(
     localStorage.getItem("language") === "jp"
       ? "退職する予定年齢"
@@ -50,7 +56,7 @@ export default function ResultTable() {
         },
       }}
     >
-      <Table sx={{  }} aria-label="simple table">
+      <Table sx={{}} aria-label="simple table">
         <TableBody>
           {rows.map((row) => (
             <TableRow

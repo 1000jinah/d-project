@@ -81,7 +81,7 @@ function SurveyThird() {
     const { t } = useTranslation("page");
     return (
       <DefaultButton
-        buttonName={t("Continue")}
+        buttonName={t("SurveySubmit")}
         sx={{
           p: "20px",
           backgroundColor: theme.palette.secondary[100],

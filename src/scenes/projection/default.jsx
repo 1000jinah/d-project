@@ -61,7 +61,7 @@ const ProjectionHeader = () => {
           }}
         >
           {localStorage.getItem("language") === "en" ? <EnMoney /> : null}
-          {localStorage.getItem("language") === "jp" ? "169,769" : "9,667"}
+          {localStorage.getItem("language") === "jp" ? "169,769" : " 97,000"}
         </Typography>
         <Typography variant="h4">
           {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
@@ -172,14 +172,14 @@ function Projection() {
       </FlexBetween>
     );
   };
-  const ProjectionSilderkBox = () => {
+  const ProjectionSilderkBox = (dataIndex) => {
     const { t } = useTranslation("page");
     return (
       <Box my={1} backgroundColor={"#fff"}>
         <Box p={2} pb={1}>
           {/* Retirement Age */}
           <ProjectionSliders
-            defaultValue
+            dataIndex={0}
             SliderTitle={
               localStorage.getItem("language") === "jp"
                 ? "退職する予定年齢"
@@ -193,6 +193,7 @@ function Projection() {
         <Box p={2} pb={1}>
           {/* Starting Balance */}
           <ProjectionSliders
+            dataIndex={1}
             SliderTitle={
               localStorage.getItem("language") === "jp"
                 ? "退職後の収入"
@@ -206,7 +207,7 @@ function Projection() {
         <Box p={2} pb={1}>
           {/* Monthly Deposit */}
           <ProjectionSliders
-            defaultValue
+            dataIndex={2}
             SliderTitle={
               localStorage.getItem("language") === "jp"
                 ? "初期投資金額"
@@ -220,7 +221,7 @@ function Projection() {
         <Box p={2} pb={1}>
           {/* Investment Period */}
           <ProjectionSliders
-            defaultValue
+        
             SliderTitle={
               localStorage.getItem("language") === "jp"
                 ? "毎月積立額"
@@ -241,9 +242,11 @@ function Projection() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
   return (
     <Box
       theme={theme}
+
       sx={{
         display: "flex",
         flexDirection: "column",

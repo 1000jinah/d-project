@@ -34,7 +34,7 @@ const DrawerHeader = () => {
           {localStorage.getItem("language") === "en" ? (
             <EnMoney variant="h3" />
           ) : null}
-          {localStorage.getItem("language") === "jp" ? "500,890 " : "5,000"}
+          {localStorage.getItem("language") === "jp" ? "500,890 " : " 95,000"}
           {/* {localStorage.getItem("language") === "en" ? "" : ""} */}
         </Typography>
         {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
@@ -158,7 +158,7 @@ function SwipeableEdgeDrawer(props) {
               <Box sx={{ mt: "-45px", px: 2 }}>
                 <FlexBetween>
                   <Typography fontWeight={"bold"}>2020</Typography>
-                  <Typography fontWeight={"bold"}>2060</Typography>
+                  <Typography fontWeight={"bold"}>2063</Typography>
                 </FlexBetween>
               </Box>
             </Box>

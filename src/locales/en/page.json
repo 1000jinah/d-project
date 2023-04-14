@@ -78,7 +78,7 @@
   "More": "More",
   "LifePlanInvestment": "Life plan investment",
   "MyCollege": "My College",
-  "MyRetirement": "Retirement",
+  "MyRetirement": "My Lite After Retirement",
   "GeneralInvestment": "General Investment",
   "RasingInvest": "Rasing $15,000 in invest",
   "ResultInitialAmount": "Initial Investment Amount",
@@ -90,7 +90,7 @@
   "EmailAddress": "Email Address",
   "Share": "Share",
   "Submit": "Submit",
-
+  "SurveySubmit": "Continue",
   "Welcome": "Welcome!",
   "Hi": "Hi!",
   "CreateNewAccount": "Create a new account",

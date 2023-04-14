@@ -44,50 +44,6 @@ const JpMoney = () => {
   const { t } = useTranslation("page");
   return <span>{t("JpMoney")}</span>;
 };
-const ProjectionHeader = () => {
-  const { t } = useTranslation("page");
-  return (
-    <Box>
-      <Typography sx={{ mb: "10px", textIndent: "10px" }}>
-        {t("ExpectedOutcome")}
-      </Typography>
-      <Box sx={{ display: "flex", alignItems: "baseline" }}>
-        <Typography
-          variant="h1"
-          sx={{
-            textIndent: "8px",
-            fontWeight: "bold",
-            letterSpacing: "-1px",
-            mr: 1,
-          }}
-        >
-          {localStorage.getItem("language") === "en" ? <EnMoney /> : null}
-          {localStorage.getItem("language") === "jp" ? "169,769" : "9,667"}
-        </Typography>
-        <Typography variant="h4">
-          {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
-        </Typography>
-      </Box>
-
-      {/* <Box>
-                <Typography sx={{ mb: "10px", textIndent: "10px" }}>
-                  Expected Outcome
-                </Typography>
-
-                <Typography
-                  variant="h1"
-                  sx={{
-                    textIndent: "10px",
-                    fontWeight: "bold",
-                    letterSpacing: "-1px",
-                  }}
-                >
-                  $ 169,769
-                </Typography>
-              </Box> */}
-    </Box>
-  );
-};
 
 const StyledBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "light" ? "#fff" : "#000",
@@ -115,6 +71,61 @@ function MarginBar() {
 function ProjectionResult() {
   const { profilename } = useParams();
   console.log(profilename);
+
+  const ProjectionHeader = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box>
+        <Typography sx={{ mb: "10px", textIndent: "10px" }}>
+          {t("ExpectedOutcome")}
+        </Typography>
+        <Box sx={{ display: "flex", alignItems: "baseline" }}>
+          <Typography
+            variant="h1"
+            sx={{
+              textIndent: "8px",
+              fontWeight: "bold",
+              letterSpacing: "-1px",
+              mr: 1,
+            }}
+          >
+            {localStorage.getItem("language") === "en" ? <EnMoney /> : null}
+            {profilename === "1"
+              ? localStorage.getItem("language") === "jp"
+                ? "169,769"
+                : " 4,500"
+              : profilename === "2"
+              ? localStorage.getItem("language") === "jp"
+                ? "169,769"
+                : " 97,000"
+              : localStorage.getItem("language") === "jp"
+              ? "169,769"
+              : " 21,700"}          </Typography>
+          <Typography variant="h4">
+            {localStorage.getItem("language") === "jp" ? <JpMoney /> : null}
+          </Typography>
+        </Box>
+  
+        {/* <Box>
+                  <Typography sx={{ mb: "10px", textIndent: "10px" }}>
+                    Expected Outcome
+                  </Typography>
+  
+                  <Typography
+                    variant="h1"
+                    sx={{
+                      textIndent: "10px",
+                      fontWeight: "bold",
+                      letterSpacing: "-1px",
+                    }}
+                  >
+                    $ 169,769
+                  </Typography>
+                </Box> */}
+      </Box>
+    );
+  };
+  
   const theme = useTheme();
   const ProjectionRiskBox = () => {
     const { t } = useTranslation("page");
@@ -269,7 +280,7 @@ function ProjectionResult() {
               : profilename === "2"
               ? localStorage.getItem("language") === "jp"
                 ? "ゆとりのある老後の生活"
-                : "Retirement"
+                : "My Life After Retirement"
               : localStorage.getItem("language") === "jp"
               ? "投資で50万円を調達"
               : "Rasing $50million investment"}

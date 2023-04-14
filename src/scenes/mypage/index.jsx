@@ -128,7 +128,7 @@ const MyPage = () => {
           </FlexBetween>
           <Box>
             <Typography fontWeight={"bold"}>
-              {localStorage.getItem("language") === "jp" ? "70万円" : "$ 70M"}
+              {localStorage.getItem("language") === "jp" ? "70万円" : "$ 4,500"}
             </Typography>
             <Typography textAlign={"right"} fontSize={"11px"} color={"#808080"}>
               42%
@@ -163,7 +163,7 @@ const MyPage = () => {
           </FlexBetween>
           <Box>
             <Typography fontWeight={"bold"}>
-              {localStorage.getItem("language") === "jp" ? "75万円" : "$ 75M"}
+              {localStorage.getItem("language") === "jp" ? "75万円" : "$ 97,000"}
             </Typography>
             <Typography textAlign={"right"} fontSize={"11px"} color={"#808080"}>
               23%
@@ -198,7 +198,7 @@ const MyPage = () => {
           </FlexBetween>
           <Box>
             <Typography fontWeight={"bold"}>
-              {localStorage.getItem("language") === "jp" ? "35万円" : "$ 35M"}
+              {localStorage.getItem("language") === "jp" ? "35万円" : "$ 21,700"}
             </Typography>
             <Typography textAlign={"right"} fontSize={"11px"} color={"#808080"}>
               68%
