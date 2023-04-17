@@ -87,22 +87,22 @@ function ProjectionResult() {
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "退職する予定年齢"
-          : "Retirement Age"
+          : "Investment Horizon"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "退職する予定年齢"
-          : "Investment Horizon"
+          : "Retirement Age"
         : localStorage.getItem("language") === "jp"
         ? "退職する予定年齢"
         : "Investment Horizon",
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "65 歳"
-          : "70 Age"
+          : "3 Years"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "65 歳"
-          : "3 Years"
+          : "70 Age"
         : localStorage.getItem("language") === "jp"
         ? "65 歳"
         : "10 Years"
@@ -111,25 +111,25 @@ function ProjectionResult() {
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "退職後の収入"
-          : "Retirement income"
+          : "Target Investment Amount"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "退職後の収入"
-          : "Target Investment Amount"
+          : "Retirement income"
         : localStorage.getItem("language") === "jp"
         ? "退職後の収入"
         : "Target Investment Amount",
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "15 万円"
-          : "$ 97,000"
+          : "$ 4,500"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "15 万円"
-          : "$ 4,500"
+          : "$ 97,000"
         : localStorage.getItem("language") === "jp"
         ? "15 万円"
-        : "$ 21,700"
+        : "$ 20,700"
     ),
     createData(
       profilename === "1"
@@ -146,11 +146,11 @@ function ProjectionResult() {
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "10 万円"
-          : "$ 15,000"
+          : "$ 1,000"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "10 万円"
-          : "$ 1,000"
+          : "$ 15,000"
         : localStorage.getItem("language") === "jp"
         ? "10 万円"
         : "$ 1,820"
@@ -170,11 +170,11 @@ function ProjectionResult() {
       profilename === "1"
         ? localStorage.getItem("language") === "jp"
           ? "5 年"
-          : "$ 2,000"
+          : "$ 1,160"
         : profilename === "2"
         ? localStorage.getItem("language") === "jp"
           ? "5 年"
-          : "$ 1,160"
+          : "$ 2,000"
         : localStorage.getItem("language") === "jp"
         ? "5 年"
         : "$ 2,500"
@@ -297,6 +297,74 @@ function ProjectionResult() {
       </FlexBetween>
     );
   };
+  const ChartYears = () => {
+    const { t } = useTranslation("page");
+    return (
+      <Box>
+        <FlexBetween>
+          <Typography fontWeight={"bold"}>2020</Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{ display: profilename === "1" ? "block" : "none" }}
+          >
+            2023
+          </Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{
+              display:
+                profilename === "2" ||
+                profilename !== "1" 
+                  ? "block"
+                  : "none",
+            }}
+          >
+            2030
+          </Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{
+              display:
+                profilename === "2"
+                  ? "block"
+                  : profilename !== "2"
+                  ? "none"
+                  : "block",
+            }}
+          >
+            2040
+          </Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{
+              display:
+                profilename === "2"
+                  ? "block"
+                  : profilename !== "2"
+                  ? "none"
+                  : "block",
+            }}
+          >
+            2050
+          </Typography>
+          <Typography
+            fontWeight={"bold"}
+            sx={{
+              display:
+                profilename === "2"
+                  ? "block"
+                  : profilename !== "2"
+                  ? "none"
+                  : "block",
+            }}
+          >
+            2060
+          </Typography>
+        </FlexBetween>
+      </Box>
+    );
+  };
+
   const TableList = () => {
     const { t } = useTranslation("page");
     return (
@@ -395,7 +463,7 @@ function ProjectionResult() {
         <FlexBetween sx={{}}>
           <IconButton
             component={Link}
-            to="/survey/first"
+            to="/mypage"
             sx={{
               color:
                 theme === "dark"
@@ -423,7 +491,7 @@ function ProjectionResult() {
                 : "My Life After Retirement"
               : localStorage.getItem("language") === "jp"
               ? "投資で50万円を調達"
-              : "Rasing $50million investment"}
+              : "Rasing $21,700 in invest"}
           </Typography>
 
           {/* Skip  */}
@@ -523,15 +591,8 @@ function ProjectionResult() {
                         src={ProjectionChartImage}
                         alt={ProjectionChartImage}
                       />
-                      <Box>
-                        <FlexBetween>
-                          <Typography fontWeight={"bold"}>2020</Typography>
-                          <Typography fontWeight={"bold"}>2030</Typography>
-                          <Typography fontWeight={"bold"}>2040</Typography>
-                          <Typography fontWeight={"bold"}>2050</Typography>
-                          <Typography fontWeight={"bold"}>2060</Typography>
-                        </FlexBetween>
-                      </Box>
+                      {/* ChartYears */}
+                      <ChartYears />
                     </Box>
                   </Box>
 

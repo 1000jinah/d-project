@@ -116,9 +116,11 @@ const MyPage = () => {
               <img src={CollegeIcon} alt={CollegeIcon} />
             </Icon>
             <Box ml={2}>
-              <Typography color={"#211d1d"}>{t("MyCollege")}</Typography>
-              <Typography fontSize={"11px"} color={"#808080"}>
+              <Typography color={"#211d1d"}>
                 {t("LifePlanInvestment")}
+              </Typography>
+              <Typography fontSize={"11px"} color={"#808080"}>
+                {t("MyCollege")}
               </Typography>
             </Box>
           </FlexBetween>
@@ -149,9 +151,12 @@ const MyPage = () => {
               <img src={RetirementIcon} alt={RetirementIcon} />
             </Icon>
             <Box ml={2}>
-              <Typography color={"#211d1d"}>{t("MyRetirement")}</Typography>
-              <Typography fontSize={"11px"} color={"#808080"}>
+              <Typography color={"#211d1d"}>
+                {" "}
                 {t("LifePlanInvestment")}
+              </Typography>
+              <Typography fontSize={"11px"} color={"#808080"}>
+                {t("MyRetirement")}
               </Typography>
             </Box>
           </FlexBetween>
@@ -184,9 +189,12 @@ const MyPage = () => {
               <img src={DollarsIcon} alt={DollarsIcon} />
             </Icon>
             <Box ml={2}>
-              <Typography color={"#211d1d"}>{t("RasingInvest")}</Typography>
-              <Typography fontSize={"11px"} color={"#808080"}>
+              <Typography color={"#211d1d"}>
+                {" "}
                 {t("GeneralInvestment")}
+              </Typography>
+              <Typography fontSize={"11px"} color={"#808080"}>
+                {t("RasingInvest")}
               </Typography>
             </Box>
           </FlexBetween>
