@@ -34,6 +34,8 @@ import ProjectionSliders from "components/Sliders";
 import SwipeableEdgeDrawer from "components/DrawerDrawer";
 // import { display, width } from "@mui/system";
 import { useTranslation } from "react-i18next";
+import ProjectionChartLabelJpImage from "../../assets/img_projectionchart_label_jp.svg";
+import ProjectionChartLabelEnImage from "../../assets/img_projectionchart_label_en.svg";
 import FixedBottomNavigation from "components/BottomHomeButton";
 const EnMoney = () => {
   const { t } = useTranslation("page");
@@ -221,7 +223,6 @@ function Projection() {
         <Box p={2} pb={1}>
           {/* Investment Period */}
           <ProjectionSliders
-        
             SliderTitle={
               localStorage.getItem("language") === "jp"
                 ? "毎月積立額"
@@ -246,7 +247,6 @@ function Projection() {
   return (
     <Box
       theme={theme}
-
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -402,6 +402,24 @@ function Projection() {
                     {/* <Header title="Bar Chart" subtitle="Simple Bar Chart" /> */}
                     <Box sx={{ m: "0.8rem", py: "0.8rem" }}>
                       {/* <OutcomeChart /> */}
+                      <img
+                        height={
+                          localStorage.getItem("language") === "jp"
+                            ? "15px"
+                            : "12px"
+                        }
+                        src={
+                          localStorage.getItem("language") === "jp"
+                            ? ProjectionChartLabelJpImage
+                            : ProjectionChartLabelEnImage
+                        }
+                        alt={
+                          localStorage.getItem("language") === "jp"
+                            ? ProjectionChartLabelJpImage
+                            : ProjectionChartLabelEnImage
+                        }
+                      />
+
                       <img
                         width="100%"
                         src={ProjectionChartImage}

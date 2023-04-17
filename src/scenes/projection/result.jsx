@@ -305,7 +305,12 @@ function ProjectionResult() {
           <Typography fontWeight={"bold"}>2020</Typography>
           <Typography
             fontWeight={"bold"}
-            sx={{ display: profilename === "1" ? "block" : "none" }}
+            sx={{
+              display:
+                localStorage.getItem("language") === "en" && profilename === "1"
+                  ? "block"
+                  : "none",
+            }}
           >
             2023
           </Typography>
@@ -314,7 +319,8 @@ function ProjectionResult() {
             sx={{
               display:
                 profilename === "2" ||
-                profilename !== "1" 
+                profilename !== "1" ||
+                localStorage.getItem("language") === "jp"
                   ? "block"
                   : "none",
             }}
@@ -325,7 +331,7 @@ function ProjectionResult() {
             fontWeight={"bold"}
             sx={{
               display:
-                profilename === "2"
+                profilename === "2" || localStorage.getItem("language") === "jp"
                   ? "block"
                   : profilename !== "2"
                   ? "none"
@@ -338,7 +344,7 @@ function ProjectionResult() {
             fontWeight={"bold"}
             sx={{
               display:
-                profilename === "2"
+                profilename === "2" || localStorage.getItem("language") === "jp"
                   ? "block"
                   : profilename !== "2"
                   ? "none"
@@ -351,7 +357,7 @@ function ProjectionResult() {
             fontWeight={"bold"}
             sx={{
               display:
-                profilename === "2"
+                profilename === "2" || localStorage.getItem("language") === "jp"
                   ? "block"
                   : profilename !== "2"
                   ? "none"

@@ -1,0 +1,6 @@
+<svg data-name="달라니까 준다 (영문)" xmlns="http://www.w3.org/2000/svg" width="165.436" height="12" viewBox="0 0 165.436 12">
+    <circle cx="4" cy="4" r="4" transform="translate(0 2)" style="fill:#ff9777"/>
+    <path data-name="Oval" d="M4.218 0A4.218 4.218 0 1 1 0 4.218 4.218 4.218 0 0 1 4.218 0z" transform="translate(124 1)" style="fill:#2e9875"/>
+    <text transform="translate(151.436 9)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="-13.59" y="0">Target</tspan></text>
+    <text data-name="Expected_60% Chance" transform="translate(61 9)" style="fill:#211d1d;font-size:10px;font-family:AppleSDGothicNeoR00"><tspan x="-47.955" y="0">Expected_60% Chance</tspan></text>
+</svg>
