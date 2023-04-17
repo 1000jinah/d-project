@@ -553,7 +553,7 @@ function ProjectionResult() {
                 }
               >
                 <Tab
-                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  sx={{ fontSize: "10px", p: " 0.45rem 0.5rem" }}
                   label={
                     localStorage.getItem("language") === "jp"
                       ? "将来の予想"
@@ -562,7 +562,7 @@ function ProjectionResult() {
                   value="1"
                 />
                 <Tab
-                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  sx={{ fontSize: "10px", p: " 0.45rem 0.5rem" }}
                   label={
                     localStorage.getItem("language") === "jp"
                       ? "ポートフォリオ"
@@ -571,7 +571,7 @@ function ProjectionResult() {
                   value="2"
                 />
                 <Tab
-                  sx={{ fontSize: "12px", p: " 0.45rem 0.5rem" }}
+                  sx={{ fontSize: "10px", p: " 0.45rem 0.5rem" }}
                   label={
                     localStorage.getItem("language") === "jp"
                       ? "投資商品"
