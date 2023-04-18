@@ -24,7 +24,7 @@ const Retirement = () => {
     <Typography
       sx={{
         fontSize: "18px",
-        fontWeight: "bold",
+        fontWeight: "600",
         pb: "20px",
         color: "#000",
         // theme.palette.secondary[0],
@@ -40,7 +40,7 @@ const OwnHome = () => {
     <Typography
       sx={{
         fontSize: "18px",
-        fontWeight: "bold",
+        fontWeight: "600",
         pb: "20px",
         color: "#000",
         // theme.palette.secondary[0],
@@ -56,7 +56,7 @@ const Savings = () => {
     <Typography
       sx={{
         fontSize: "18px",
-        fontWeight: "bold",
+        fontWeight: "600",
         pb: "20px",
         color: "#000",
         // theme.palette.secondary[0],
@@ -72,7 +72,7 @@ const WeddingFund = () => {
     <Typography
       sx={{
         fontSize: "18px",
-        fontWeight: "bold",
+        fontWeight: "600",
         pb: "20px",
         color: "#000",
         // theme.palette.secondary[0],
@@ -88,7 +88,7 @@ const Education = () => {
     <Typography
       sx={{
         fontSize: "18px",
-        fontWeight: "bold",
+        fontWeight: "600",
         pb: "20px",
         color: "#000",
         // theme.palette.secondary[0],
@@ -123,7 +123,7 @@ const GoalSecond = () => {
         <FlexBetween>
           <IconButton
             component={Link}
-            to="/way"
+            to="/goal/first"
             sx={{
               color:
                 theme === "dark"
